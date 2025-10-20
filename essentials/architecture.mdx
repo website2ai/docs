@@ -1,0 +1,317 @@
+---
+title: 'Architecture'
+description: 'Understanding the Two-Phase Generation system'
+---
+
+## Overview
+
+website2ai uses an innovative **Two-Phase Generation** architecture that combines the speed of parallel processing with the consistency of a unified type system to generate production-ready React projects.
+
+## The Problem
+
+Traditional AI code generation faces a critical challenge: **type inconsistency**. When generating multiple files in parallel, each file is created independently without knowledge of types defined in other files, leading to:
+
+- Import/export mismatches
+- Type definition conflicts
+- Component prop type errors
+- Compilation failures
+
+## The Solution: Two-Phase Generation
+
+Our architecture solves this by separating concerns into two distinct phases:
+
+### Phase 1: Interface Planning
+
+**Goal**: Create a complete, consistent TypeScript type system before writing any implementation.
+
+<Steps>
+  <Step title="Single LLM Call">
+    One AI call generates the entire type system for the project
+  </Step>
+
+  <Step title="Interface Specifications">
+    Creates TypeScript interfaces, types, and import/export specs for ALL files
+  </Step>
+
+  <Step title="Type Contracts">
+    Defines exact contracts that each file must implement
+  </Step>
+</Steps>
+
+**Output**: Complete type system with zero ambiguity
+
+**Example Interface Plan**:
+```typescript
+// For src/components/TodoItem.tsx
+interface TodoItemProps {
+  id: string;
+  title: string;
+  completed: boolean;
+  onToggle: (id: string) => void;
+  onDelete: (id: string) => void;
+}
+
+export type { TodoItemProps };
+```
+
+### Phase 2: Parallel Implementation
+
+**Goal**: Generate files as fast as possible while maintaining perfect type consistency.
+
+<Steps>
+  <Step title="Parallel Workers">
+    Celery workers generate files simultaneously (8-15 files typically)
+  </Step>
+
+  <Step title="Interface-Driven">
+    Each worker receives the exact TypeScript interfaces to implement
+  </Step>
+
+  <Step title="Direct Storage">
+    Files are saved directly to PostgreSQL and R2 as they complete
+  </Step>
+
+  <Step title="Real-time Streaming">
+    Each completed file triggers an SSE event to the frontend
+  </Step>
+</Steps>
+
+**Output**: Production-ready React project that compiles without errors
+
+## Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      User Request                           │
+│    "Create a todo app with dark mode and drag-and-drop"    │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│              PHASE 1: INTERFACE PLANNING                    │
+│                    (Single LLM Call)                        │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. Analyze requirements                                    │
+│  2. Plan file structure (8-15 files)                       │
+│  3. Create complete TypeScript type system                 │
+│                                                             │
+│  Output: InterfacesPlan {                                   │
+│    - All component interfaces (TodoItemProps, ...)         │
+│    - Shared types (Todo, Theme, ...)                       │
+│    - Import/export specifications                          │
+│  }                                                          │
+│                                                             │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│          PHASE 2: PARALLEL IMPLEMENTATION                   │
+│              (N Parallel LLM Calls)                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
+│  │ Worker 1     │  │ Worker 2     │  │ Worker 3     │     │
+│  │              │  │              │  │              │     │
+│  │ Generate     │  │ Generate     │  │ Generate     │     │
+│  │ App.tsx      │  │ TodoItem.tsx │  │ Header.tsx   │     │
+│  │              │  │              │  │              │     │
+│  │ Using:       │  │ Using:       │  │ Using:       │     │
+│  │ - Interface  │  │ - Interface  │  │ - Interface  │     │
+│  │   specs      │  │   specs      │  │   specs      │     │
+│  │ - Context    │  │ - Context    │  │ - Context    │     │
+│  │              │  │              │  │              │     │
+│  │ ↓ Save to DB │  │ ↓ Save to DB │  │ ↓ Save to DB │     │
+│  │ ↓ Send SSE ✓ │  │ ↓ Send SSE ✓ │  │ ↓ Send SSE ✓ │     │
+│  └──────────────┘  └──────────────┘  └──────────────┘     │
+│                                                             │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    FINALIZATION                             │
+├─────────────────────────────────────────────────────────────┤
+│  - All files already in database                           │
+│  - Aggregate metadata (tokens, errors)                     │
+│  - Update status to "completed"                            │
+│  - Send final SSE event                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Tech Stack
+
+### Backend Services
+
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| **API Server** | FastAPI | REST API endpoints |
+| **SSE Server** | FastAPI | Real-time event streaming |
+| **Task Queue** | Celery + Redis | Distributed parallel processing |
+| **Database** | PostgreSQL | Project and file storage |
+| **Storage** | R2 (S3-compatible) | File content storage |
+| **AI** | OpenAI GPT-4 | Code generation |
+
+### Frontend
+
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| **Framework** | Next.js 15 | React with SSR |
+| **UI** | Tailwind + shadcn/ui | Component library |
+| **Code Preview** | Sandpack | Live React preview |
+| **Real-time** | EventSource | SSE client |
+
+## Layered Architecture
+
+The backend follows Domain-Driven Design (DDD) principles:
+
+```
+src/
+├── domain/              # Business logic (framework-independent)
+│   └── website/
+│       ├── entities.py          # Website, Version, File
+│       ├── value_objects.py     # Status, MessageRole
+│       ├── services.py          # ReactProjectPlanner, ReactInterfacePlanner
+│       └── dtos.py              # ProjectPlan, InterfacesPlan
+│
+├── application/         # Use cases (orchestration)
+│   └── use_cases/
+│       └── website/
+│           ├── create_website.py
+│           └── generate_react_project.py
+│
+├── infrastructure/      # External services
+│   ├── persistence/
+│   │   └── website/
+│   │       ├── models.py        # SQLAlchemy ORM
+│   │       └── repository.py    # Database access
+│   └── redis/
+│       ├── sync_pubsub.py       # Redis pub/sub
+│       └── async_pubsub.py
+│
+└── presentation/        # API & Workers
+    ├── api/
+    │   └── v1/
+    │       ├── website/
+    │       └── auth/
+    └── workers/
+        ├── react_orchestrator.py      # Two-Phase orchestration
+        └── react_file_generator.py    # Parallel file generation
+```
+
+### Layer Responsibilities
+
+<AccordionGroup>
+  <Accordion title="Domain Layer">
+    - Pure business logic
+    - Framework-independent
+    - Domain models with Pydantic
+    - Services: `ReactProjectPlanner`, `ReactInterfacePlanner`
+    - No dependencies on outer layers
+  </Accordion>
+
+  <Accordion title="Application Layer">
+    - Use cases and workflows
+    - Orchestrates domain objects
+    - Transaction management
+    - Example: `GenerateReactProjectUseCase`
+  </Accordion>
+
+  <Accordion title="Infrastructure Layer">
+    - Database repositories (SQLAlchemy)
+    - Redis pub/sub for events
+    - OpenAI API integration
+    - External service implementations
+  </Accordion>
+
+  <Accordion title="Presentation Layer">
+    - FastAPI routes (REST + SSE)
+    - Request/response schemas
+    - Celery workers
+    - Input validation
+  </Accordion>
+</AccordionGroup>
+
+## Real-time Streaming
+
+One of the key innovations is **file-by-file streaming**:
+
+### Traditional Approach
+```
+[Wait 2-3 minutes] → Complete project delivered
+```
+
+User sees nothing until everything is done.
+
+### website2ai Approach
+```
+Planning (3s) →
+Interface planning (5s) →
+  ✓ App.tsx completed (8s)
+  ✓ Header.tsx completed (10s)
+  ✓ TodoList.tsx completed (12s)
+  ✓ TodoItem.tsx completed (14s)
+  ...
+Complete (45s)
+```
+
+User watches the project being built in real-time!
+
+### How It Works
+
+<Steps>
+  <Step title="Redis Pub/Sub">
+    Workers publish events to Redis channels
+  </Step>
+
+  <Step title="SSE Server">
+    Subscribes to Redis and streams to browser via Server-Sent Events
+  </Step>
+
+  <Step title="EventSource">
+    Frontend receives events and updates UI instantly
+  </Step>
+</Steps>
+
+## Benefits
+
+<CardGroup cols={2}>
+  <Card title="Speed" icon="bolt">
+    Parallel generation is 5-8x faster than sequential
+  </Card>
+
+  <Card title="Consistency" icon="check">
+    Interface-first ensures perfect type safety
+  </Card>
+
+  <Card title="Real-time" icon="satellite-dish">
+    See progress file-by-file as it happens
+  </Card>
+
+  <Card title="Scalability" icon="chart-line">
+    Celery workers can scale horizontally
+  </Card>
+</CardGroup>
+
+## Performance
+
+Typical generation times:
+
+| Project Size | Sequential | Parallel (website2ai) |
+|--------------|------------|----------------------|
+| Small (5-8 files) | 2-3 minutes | 25-35 seconds |
+| Medium (8-12 files) | 3-5 minutes | 35-50 seconds |
+| Large (12-15 files) | 5-8 minutes | 50-90 seconds |
+
+**Note**: Times vary based on OpenAI API response times.
+
+## Next Steps
+
+<CardGroup>
+  <Card title="Versioning System" icon="code-branch" href="/essentials/versioning">
+    Learn how version control works
+  </Card>
+
+  <Card title="API Reference" icon="book" href="/api-reference/introduction">
+    Explore the API endpoints
+  </Card>
+</CardGroup>

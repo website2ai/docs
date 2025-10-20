@@ -5,52 +5,168 @@ description: 'Getting started with the website2ai API'
 
 ## Welcome to the API
 
-The website2ai API allows you to programmatically convert websites into AI-ready content.
+The website2ai API provides endpoints to programmatically create and manage AI-generated React websites. It combines RESTful API endpoints with real-time Server-Sent Events (SSE) for streaming progress updates.
+
+## Base URLs
+
+```
+REST API:     http://localhost:8000
+SSE Server:   http://localhost:8001
+```
+
+For production, replace with your deployed URLs.
 
 ## Authentication
 
-All API requests require authentication using an API key:
+All API requests require authentication using a JWT bearer token:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_API_KEY" \
-  https://api.website2ai.com/v1/convert
+curl -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  http://localhost:8000/v1/websites
 ```
 
-## Base URL
+### Getting a Token
 
+Authenticate using Google OAuth:
+
+```bash
+# Exchange Google OAuth code for JWT token
+POST /v1/auth/google/token
+Content-Type: application/json
+
+{
+  "code": "GOOGLE_AUTH_CODE"
+}
 ```
-https://api.website2ai.com/v1
+
+**Response:**
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "bearer"
+}
 ```
 
-## Rate Limits
+Store this token and include it in all subsequent requests.
 
-- Free tier: 100 requests/day
-- Pro tier: 10,000 requests/day
-- Enterprise: Custom limits
+## Core Concepts
+
+### Projects and Versions
+
+website2ai uses a **versioning system** where:
+
+- **base_id**: Unique identifier for a project (all versions share this)
+- **version**: Integer version number (starts at 1)
+- Each generation creates a new version
+- You can branch from any previous version
+
+### Generation Flow
+
+1. **Create Project**: `POST /v1/websites` - Creates base project with version 1
+2. **Generate**: `POST /v1/websites/{base_id}/generate` - Generates website code
+3. **Stream Progress**: `GET /sse/websites/{website_id}` - Watch real-time updates
+4. **Retrieve**: `GET /v1/websites/{base_id}` - Get generated files
+
+### Website States
+
+- `pending`: Created but not yet generated
+- `processing`: Currently generating
+- `completed`: Successfully generated
+- `failed`: Generation failed (check error message)
+
+## Real-time Updates (SSE)
+
+Subscribe to Server-Sent Events to receive file-by-file progress:
+
+```javascript
+const eventSource = new EventSource(
+  `http://localhost:8001/sse/websites/${website_id}`
+);
+
+eventSource.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+  console.log(data.type, data.data);
+};
+```
+
+### Event Types
+
+| Event | Description |
+|-------|-------------|
+| `orchestration_started` | Generation begins |
+| `planning` | Planning project structure |
+| `planning_completed` | File list ready |
+| `interface_planning` | Creating TypeScript interfaces |
+| `interface_planning_completed` | Type system ready |
+| `file_generating` | Generating specific file |
+| `file_completed` | File generation complete |
+| `finalizing` | Aggregating metadata |
+| `completed` | All done! |
+| `failed` | Generation failed |
 
 ## Response Format
 
-All responses are returned in JSON format:
+All REST API responses use JSON:
 
 ```json
 {
-  "success": true,
-  "data": {
-    // Response data
-  }
+  "base_id": "uuid-of-project",
+  "version": 1,
+  "status": "completed",
+  "title": "My Website",
+  "created_at": "2025-10-21T00:00:00Z",
+  "updated_at": "2025-10-21T00:05:00Z"
 }
 ```
 
 ## Error Handling
 
-Errors are returned with appropriate HTTP status codes:
+Errors return appropriate HTTP status codes with details:
 
 ```json
 {
-  "success": false,
-  "error": {
-    "code": "ERROR_CODE",
-    "message": "Error description"
-  }
+  "detail": "Error message describing what went wrong"
 }
 ```
+
+### Common Status Codes
+
+- `200 OK` - Request successful
+- `201 Created` - Resource created successfully
+- `400 Bad Request` - Invalid request parameters
+- `401 Unauthorized` - Missing or invalid authentication
+- `404 Not Found` - Resource doesn't exist
+- `422 Unprocessable Entity` - Validation error
+- `500 Internal Server Error` - Server error
+
+## Rate Limits
+
+Currently no rate limits are enforced. When deployed to production, consider implementing rate limiting based on your infrastructure needs.
+
+## Pagination
+
+List endpoints support pagination:
+
+```bash
+GET /v1/websites?skip=0&limit=20
+```
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Project" icon="plus" href="/api-reference/endpoint/create-project">
+    Create a new website project
+  </Card>
+
+  <Card title="Generate Website" icon="wand-magic-sparkles" href="/api-reference/endpoint/generate">
+    Generate website code with AI
+  </Card>
+
+  <Card title="Get Project" icon="file-code" href="/api-reference/endpoint/get">
+    Retrieve project and files
+  </Card>
+
+  <Card title="SSE Streaming" icon="satellite-dish" href="/api-reference/endpoint/sse">
+    Real-time progress updates
+  </Card>
+</CardGroup>

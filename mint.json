@@ -57,13 +57,11 @@
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Core Concepts",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation"
+        "essentials/architecture",
+        "essentials/versioning",
+        "essentials/authentication"
       ]
     },
     {
@@ -73,11 +71,19 @@
       ]
     },
     {
-      "group": "Endpoints",
+      "group": "Project Management",
       "pages": [
+        "api-reference/endpoint/create-project",
+        "api-reference/endpoint/list",
         "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
+      ]
+    },
+    {
+      "group": "Generation",
+      "pages": [
+        "api-reference/endpoint/generate",
+        "api-reference/endpoint/sse"
       ]
     }
   ],

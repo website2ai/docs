@@ -1,52 +1,92 @@
 ---
-title: 'Delete Content'
-api: 'DELETE https://api.website2ai.com/v1/content/{id}'
-description: 'Delete processed content'
+title: 'Delete Project'
+api: 'DELETE http://localhost:8000/v1/websites/{base_id}'
+description: 'Delete entire project and all versions'
 ---
+
+## Overview
+
+Permanently deletes a website project and ALL its versions. This action cannot be undone.
+
+<Warning>
+  This will delete:
+  - All versions of the project
+  - All generated files
+  - All message history
+  - File storage data
+
+  Consider exporting important data before deletion.
+</Warning>
 
 ## Path Parameters
 
-<ParamField path="id" type="string" required>
-  The unique identifier of the content to delete
+<ParamField path="base_id" type="string" required>
+  The base ID of the project to delete
+</ParamField>
+
+## Headers
+
+<ParamField header="Authorization" type="string" required>
+  Bearer JWT token for authentication
 </ParamField>
 
 ## Response
 
-<ResponseField name="success" type="boolean">
-  Indicates if the deletion was successful
+<ResponseField name="status" type="string">
+  Status message: "deleted"
 </ResponseField>
 
-<ResponseField name="message" type="string">
-  Confirmation message
+<ResponseField name="base_id" type="string">
+  The base ID of the deleted project
 </ResponseField>
 
-## Example
+## Example Request
 
 <CodeGroup>
 
 ```bash cURL
-curl -X DELETE https://api.website2ai.com/v1/content/abc123 \
-  -H "Authorization: Bearer YOUR_API_KEY"
+curl -X DELETE http://localhost:8000/v1/websites/550e8400-e29b-41d4-a716-446655440000 \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
-```javascript Node.js
-const response = await fetch('https://api.website2ai.com/v1/content/abc123', {
-  method: 'DELETE',
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY'
-  }
-});
-const data = await response.json();
+```javascript JavaScript
+const baseId = '550e8400-e29b-41d4-a716-446655440000';
+
+// Confirm before deleting
+if (confirm('Are you sure you want to delete this project? This cannot be undone.')) {
+  const response = await fetch(
+    `http://localhost:8000/v1/websites/${baseId}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Authorization': 'Bearer YOUR_JWT_TOKEN'
+      }
+    }
+  );
+
+  const result = await response.json();
+  console.log('Project deleted:', result.base_id);
+}
 ```
 
 ```python Python
 import requests
 
-response = requests.delete(
-  'https://api.website2ai.com/v1/content/abc123',
-  headers={'Authorization': 'Bearer YOUR_API_KEY'}
-)
-data = response.json()
+base_id = '550e8400-e29b-41d4-a716-446655440000'
+
+# Confirm before deleting
+confirmation = input(f'Delete project {base_id}? This cannot be undone. (yes/no): ')
+
+if confirmation.lower() == 'yes':
+    response = requests.delete(
+        f'http://localhost:8000/v1/websites/{base_id}',
+        headers={'Authorization': 'Bearer YOUR_JWT_TOKEN'}
+    )
+
+    result = response.json()
+    print(f"Project deleted: {result['base_id']}")
+else:
+    print('Deletion cancelled')
 ```
 
 </CodeGroup>
@@ -55,21 +95,101 @@ data = response.json()
 
 ```json
 {
-  "success": true,
-  "message": "Content successfully deleted"
+  "status": "deleted",
+  "base_id": "550e8400-e29b-41d4-a716-446655440000"
+}
+```
+
+## Deletion Process
+
+When you delete a project, the system:
+
+<Steps>
+  <Step title="Verify Ownership">
+    Confirms the authenticated user owns the project
+  </Step>
+
+  <Step title="Delete Database Records">
+    Removes all versions, files, and messages from PostgreSQL
+  </Step>
+
+  <Step title="Delete File Storage">
+    Removes all file content from R2 storage
+  </Step>
+
+  <Step title="Confirm Deletion">
+    Returns success response
+  </Step>
+</Steps>
+
+## Best Practices
+
+### Before Deletion
+
+1. **Export Important Data**: Download files you may need later
+2. **Check Version History**: Review all versions to ensure you're not deleting needed work
+3. **Confirm with User**: Always confirm deletion in your UI
+
+### Safe Deletion Pattern
+
+```javascript
+// 1. Get project details first
+const project = await fetch(
+  `http://localhost:8000/v1/websites/${baseId}`,
+  { headers: { 'Authorization': 'Bearer YOUR_JWT_TOKEN' } }
+).then(r => r.json());
+
+// 2. Show confirmation with project details
+const confirmed = confirm(
+  `Delete "${project.title}" (${project.version} versions)? ` +
+  `This cannot be undone.`
+);
+
+if (!confirmed) return;
+
+// 3. Perform deletion
+const response = await fetch(
+  `http://localhost:8000/v1/websites/${baseId}`,
+  {
+    method: 'DELETE',
+    headers: { 'Authorization': 'Bearer YOUR_JWT_TOKEN' }
+  }
+);
+
+if (response.ok) {
+  console.log('Project deleted successfully');
+  // Redirect or update UI
+} else {
+  console.error('Deletion failed');
 }
 ```
 
 ## Error Responses
 
-### Content Not Found
+### 404 Not Found
 
 ```json
 {
-  "success": false,
-  "error": {
-    "code": "NOT_FOUND",
-    "message": "Content with ID abc123 not found"
-  }
+  "detail": "Website project not found"
 }
 ```
+
+### 401 Unauthorized
+
+```json
+{
+  "detail": "Could not validate credentials"
+}
+```
+
+### 403 Forbidden
+
+```json
+{
+  "detail": "You do not have permission to delete this project"
+}
+```
+
+## Alternative: Soft Delete
+
+If you want to implement soft delete (mark as deleted without removing data), you'll need to add a custom field to your application layer. The API currently only supports hard delete.

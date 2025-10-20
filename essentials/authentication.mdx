@@ -1,0 +1,485 @@
+---
+title: 'Authentication'
+description: 'Google OAuth and JWT token management'
+---
+
+## Overview
+
+website2ai uses **Google OAuth 2.0** for user authentication and **JWT (JSON Web Tokens)** for API authorization. This provides a secure, industry-standard authentication flow.
+
+## Authentication Flow
+
+<Steps>
+  <Step title="Google OAuth Login">
+    User clicks "Sign in with Google" and authenticates via Google
+  </Step>
+
+  <Step title="Authorization Code">
+    Google redirects back with an authorization code
+  </Step>
+
+  <Step title="Exchange for JWT">
+    Frontend sends code to backend, receives JWT token
+  </Step>
+
+  <Step title="Store Token">
+    Frontend stores JWT in localStorage or secure cookie
+  </Step>
+
+  <Step title="Authenticated Requests">
+    Include JWT in Authorization header for all API calls
+  </Step>
+</Steps>
+
+## Setting Up Google OAuth
+
+### 1. Create Google OAuth Credentials
+
+<Steps>
+  <Step title="Go to Google Cloud Console">
+    Visit [Google Cloud Console](https://console.cloud.google.com/)
+  </Step>
+
+  <Step title="Create a Project">
+    Create a new project or select an existing one
+  </Step>
+
+  <Step title="Enable Google+ API">
+    Navigate to APIs & Services → Enable APIs → Search for "Google+ API"
+  </Step>
+
+  <Step title="Create OAuth Credentials">
+    - Go to Credentials → Create Credentials → OAuth client ID
+    - Application type: Web application
+    - Authorized JavaScript origins: `http://localhost:3000`
+    - Authorized redirect URIs: `http://localhost:3000/auth/callback`
+  </Step>
+
+  <Step title="Save Credentials">
+    Copy the Client ID and Client Secret
+  </Step>
+</Steps>
+
+### 2. Configure Backend
+
+Add to your `.env` file:
+
+```bash
+GOOGLE_CLIENT_ID=your_client_id_here
+GOOGLE_CLIENT_SECRET=your_client_secret_here
+JWT_SECRET_KEY=your_jwt_secret_here  # Generate a secure random string
+JWT_ALGORITHM=HS256
+JWT_EXPIRATION_HOURS=720  # 30 days
+```
+
+### 3. Configure Frontend
+
+Add to your frontend `.env.local`:
+
+```bash
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=your_client_id_here
+```
+
+## Frontend Implementation
+
+### Using the Auth Context
+
+The frontend provides an `AuthContext` for managing authentication state:
+
+```javascript
+import { useAuth } from '@/app/contexts/AuthContext';
+
+function MyComponent() {
+  const { user, isAuthenticated, login, logout } = useAuth();
+
+  if (!isAuthenticated) {
+    return <button onClick={login}>Sign in with Google</button>;
+  }
+
+  return (
+    <div>
+      <p>Welcome, {user.name}!</p>
+      <button onClick={logout}>Sign out</button>
+    </div>
+  );
+}
+```
+
+### Google Login Button Component
+
+```typescript
+// components/GoogleLoginButton.tsx
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useAuth } from '@/app/contexts/AuthContext';
+
+export function GoogleLoginButton() {
+  const { login } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleGoogleLogin = async () => {
+    setIsLoading(true);
+    try {
+      await login();
+    } catch (error) {
+      console.error('Login failed:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <button
+      onClick={handleGoogleLogin}
+      disabled={isLoading}
+      className="flex items-center gap-2 px-4 py-2 bg-white border rounded-lg"
+    >
+      <img src="/google-icon.svg" alt="Google" className="w-5 h-5" />
+      {isLoading ? 'Signing in...' : 'Sign in with Google'}
+    </button>
+  );
+}
+```
+
+## Backend API
+
+### Exchange Google Code for JWT
+
+```bash
+POST /v1/auth/google/token
+Content-Type: application/json
+
+{
+  "code": "4/0AX4XfWg..."  # Authorization code from Google
+}
+```
+
+**Response:**
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "bearer",
+  "user": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "email": "user@example.com",
+    "name": "John Doe",
+    "picture": "https://lh3.googleusercontent.com/..."
+  }
+}
+```
+
+### Using the JWT Token
+
+Include the token in all authenticated requests:
+
+```bash
+GET /v1/websites
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+```javascript
+const token = localStorage.getItem('auth_token');
+
+const response = await fetch('http://localhost:8000/v1/websites', {
+  headers: {
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  }
+});
+```
+
+## Token Management
+
+### Token Storage
+
+<Tabs>
+  <Tab title="localStorage (Simple)">
+    ```javascript
+    // Store token
+    localStorage.setItem('auth_token', token);
+
+    // Retrieve token
+    const token = localStorage.getItem('auth_token');
+
+    // Remove token
+    localStorage.removeItem('auth_token');
+    ```
+
+    **Pros**: Simple, works everywhere
+    **Cons**: Vulnerable to XSS attacks
+  </Tab>
+
+  <Tab title="HttpOnly Cookie (Secure)">
+    ```javascript
+    // Set token in cookie (backend)
+    response.set_cookie(
+        key="auth_token",
+        value=token,
+        httponly=True,
+        secure=True,
+        samesite="lax",
+        max_age=30*24*60*60  # 30 days
+    )
+
+    // Browser automatically includes cookie
+    fetch('/api/endpoint');  // Cookie sent automatically
+    ```
+
+    **Pros**: Immune to XSS, more secure
+    **Cons**: Requires CORS configuration
+  </Tab>
+</Tabs>
+
+### Token Expiration
+
+JWT tokens expire after a set period (default: 30 days). Handle expiration gracefully:
+
+```javascript
+async function apiRequest(url, options = {}) {
+  const token = localStorage.getItem('auth_token');
+
+  const response = await fetch(url, {
+    ...options,
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      ...options.headers
+    }
+  });
+
+  // Handle 401 Unauthorized
+  if (response.status === 401) {
+    // Token expired or invalid
+    localStorage.removeItem('auth_token');
+    window.location.href = '/login';
+    throw new Error('Session expired');
+  }
+
+  return response;
+}
+```
+
+### Token Refresh
+
+The current implementation doesn't support token refresh. Users must re-authenticate after 30 days. To implement refresh tokens:
+
+<Steps>
+  <Step title="Issue Both Tokens">
+    Return both access token (short-lived) and refresh token (long-lived)
+  </Step>
+
+  <Step title="Access Token Expires">
+    When access token expires (401), use refresh token to get new access token
+  </Step>
+
+  <Step title="Refresh Endpoint">
+    Add `/v1/auth/refresh` endpoint to exchange refresh token
+  </Step>
+</Steps>
+
+## Protected Routes
+
+### Frontend Route Protection
+
+```typescript
+// components/ProtectedRoute.tsx
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/app/contexts/AuthContext';
+
+export function ProtectedRoute({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated, isLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, isLoading, router]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!isAuthenticated) {
+    return null;
+  }
+
+  return <>{children}</>;
+}
+```
+
+Usage:
+
+```typescript
+// app/builder/page.tsx
+import { ProtectedRoute } from '@/components/ProtectedRoute';
+
+export default function BuilderPage() {
+  return (
+    <ProtectedRoute>
+      <BuilderContent />
+    </ProtectedRoute>
+  );
+}
+```
+
+### Backend Route Protection
+
+All API endpoints automatically require authentication via FastAPI dependency injection:
+
+```python
+from fastapi import Depends
+from src.presentation.api.v1.auth.dependencies import get_current_user
+
+@router.get("/v1/websites")
+async def list_websites(
+    current_user: User = Depends(get_current_user)
+):
+    # current_user is automatically populated from JWT
+    return await website_service.list_user_websites(current_user.id)
+```
+
+## User Information
+
+The JWT token contains user information:
+
+```json
+{
+  "sub": "550e8400-e29b-41d4-a716-446655440000",  // User ID
+  "email": "user@example.com",
+  "name": "John Doe",
+  "picture": "https://lh3.googleusercontent.com/...",
+  "iat": 1698765432,  // Issued at
+  "exp": 1701357432   // Expires at
+}
+```
+
+Access user info in frontend:
+
+```javascript
+import { useAuth } from '@/app/contexts/AuthContext';
+
+function UserProfile() {
+  const { user } = useAuth();
+
+  return (
+    <div>
+      <img src={user.picture} alt={user.name} />
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+    </div>
+  );
+}
+```
+
+## Security Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use HTTPS in Production">
+    Always use HTTPS to prevent token interception:
+    ```
+    ✓ https://api.website2ai.com
+    ✗ http://api.website2ai.com
+    ```
+  </Accordion>
+
+  <Accordion title="Validate JWT Signature">
+    Backend always validates JWT signature with secret key
+  </Accordion>
+
+  <Accordion title="Set Appropriate Expiration">
+    - Short-lived for high-security apps (1 hour)
+    - Longer for convenience (30 days)
+    - Use refresh tokens for best of both worlds
+  </Accordion>
+
+  <Accordion title="Rotate JWT Secret">
+    Change JWT_SECRET_KEY periodically to invalidate all tokens
+  </Accordion>
+
+  <Accordion title="Don't Log Tokens">
+    Never log JWT tokens - they're sensitive credentials
+  </Accordion>
+</AccordionGroup>
+
+## Logout
+
+```javascript
+function logout() {
+  // Remove token
+  localStorage.removeItem('auth_token');
+
+  // Optional: Call backend to blacklist token
+  await fetch('http://localhost:8000/v1/auth/logout', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  // Redirect to login
+  window.location.href = '/login';
+}
+```
+
+## Testing Authentication
+
+### Get a Test Token
+
+For development, you can create a test user:
+
+```python
+from src.domain.auth.services import create_jwt_token
+
+user_data = {
+    "id": "test-user-id",
+    "email": "test@example.com",
+    "name": "Test User"
+}
+
+token = create_jwt_token(user_data)
+print(f"Test token: {token}")
+```
+
+Use this token for API testing:
+
+```bash
+curl -H "Authorization: Bearer YOUR_TEST_TOKEN" \
+  http://localhost:8000/v1/websites
+```
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="401 Unauthorized">
+    - Check token is included in Authorization header
+    - Verify token hasn't expired
+    - Ensure JWT_SECRET_KEY matches between requests
+  </Accordion>
+
+  <Accordion title="Google OAuth Error">
+    - Verify GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET
+    - Check redirect URI matches Google Console settings
+    - Ensure Google+ API is enabled
+  </Accordion>
+
+  <Accordion title="CORS Issues">
+    - Configure CORS in FastAPI to allow your frontend origin
+    - Check credentials mode in fetch requests
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup>
+  <Card title="API Reference" icon="book" href="/api-reference/introduction">
+    Start making authenticated API calls
+  </Card>
+
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up your development environment
+  </Card>
+</CardGroup>

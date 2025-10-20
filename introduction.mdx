@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: 'Welcome to the website2ai documentation'
+description: 'AI-powered React website builder with live preview'
 ---
 
 <img
@@ -16,7 +16,32 @@ description: 'Welcome to the website2ai documentation'
 
 ## Welcome to website2ai
 
-website2ai helps you transform websites into AI-ready content.
+**website2ai** is an AI-powered platform that transforms your ideas into production-ready React websites with TypeScript. Built with cutting-edge technology, it combines intelligent code generation with real-time streaming updates to deliver a seamless development experience.
+
+### Key Features
+
+- **Two-Phase Generation**: Intelligent architecture that creates a complete TypeScript type system first, then generates files in parallel for maximum speed and consistency
+- **Real-time Streaming**: Watch your website being built file-by-file with Server-Sent Events (SSE)
+- **Version Control**: Built-in versioning system to track iterations and branch from any previous version
+- **Live Preview**: Instant Sandpack-powered preview as you generate code
+- **Production-Ready**: TypeScript-based React projects that compile without errors
+
+### Tech Stack
+
+**Frontend:**
+- Next.js 15 with App Router
+- Tailwind CSS & shadcn/ui
+- Sandpack for live code preview
+- Real-time SSE updates
+
+**Backend:**
+- FastAPI with async support
+- PostgreSQL for persistence
+- Redis for real-time pub/sub
+- Celery for parallel task processing
+- OpenAI for intelligent code generation
+
+## Get Started
 
 <CardGroup cols={2}>
   <Card
@@ -24,27 +49,35 @@ website2ai helps you transform websites into AI-ready content.
     icon="rocket"
     href="/quickstart"
   >
-    Get started with website2ai in minutes
+    Start building AI-powered websites in minutes
   </Card>
   <Card
     title="API Reference"
     icon="code"
-    href="/api-reference"
+    href="/api-reference/introduction"
   >
-    Explore our API endpoints
+    Explore REST API endpoints and SSE streaming
   </Card>
   <Card
     title="Development"
     icon="screwdriver-wrench"
     href="/development"
   >
-    Learn about local development
+    Set up local development environment
   </Card>
   <Card
-    title="Settings"
-    icon="sliders"
-    href="/essentials/settings"
+    title="Architecture"
+    icon="diagram-project"
+    href="/essentials/architecture"
   >
-    Configure your documentation
+    Learn about the Two-Phase Generation system
   </Card>
 </CardGroup>
+
+## How It Works
+
+1. **Describe Your Vision**: Tell the AI what website you want to build
+2. **AI Planning**: System plans the project structure and TypeScript interfaces
+3. **Parallel Generation**: Files are generated in parallel with real-time updates
+4. **Live Preview**: See your website come to life instantly
+5. **Iterate & Refine**: Make changes and create new versions on the fly

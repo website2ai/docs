@@ -1,60 +1,260 @@
 ---
 title: 'Quickstart'
-description: 'Start building with website2ai in under 5 minutes'
+description: 'Start building AI-powered React websites in minutes'
 ---
 
-## Setup your development
+## Getting Started
 
-Learn how to get started with website2ai.
+website2ai consists of two main components: a **FastAPI backend** and a **Next.js frontend**. Follow this guide to get everything running locally.
 
-### Installation
+## Prerequisites
+
+- **Node.js 18+** (for frontend)
+- **Python 3.12+** or **Docker** (for backend)
+- **OpenAI API Key** ([Get one here](https://platform.openai.com/api-keys))
+- **Google OAuth Credentials** (optional, for authentication)
+
+## Backend Setup
+
+### Option 1: Docker Compose (Recommended)
+
+The easiest way to run the backend with all required services:
+
+<Steps>
+  <Step title="Clone the repository">
+    ```bash
+    git clone https://github.com/website2ai/server.git
+    cd server
+    ```
+  </Step>
+
+  <Step title="Configure environment">
+    ```bash
+    cp .env.docker .env.docker.local
+    # Edit .env.docker.local and add your credentials:
+    # - OPENAI_API_KEY
+    # - GOOGLE_CLIENT_ID (optional)
+    # - GOOGLE_CLIENT_SECRET (optional)
+    ```
+  </Step>
+
+  <Step title="Start all services">
+    ```bash
+    docker compose up -d
+    ```
+
+    This starts:
+    - FastAPI server (port 8000)
+    - SSE server (port 8001)
+    - PostgreSQL database
+    - Redis message broker
+    - Celery worker
+  </Step>
+
+  <Step title="Verify it's running">
+    Visit [http://localhost:8000/docs](http://localhost:8000/docs) to see the API documentation.
+  </Step>
+</Steps>
+
+### Option 2: Local Development
+
+If you prefer to run services locally:
+
+<Steps>
+  <Step title="Install dependencies">
+    ```bash
+    uv sync
+    ```
+  </Step>
+
+  <Step title="Start Redis & PostgreSQL">
+    ```bash
+    # Redis
+    docker run -d -p 6379:6379 redis:latest
+
+    # PostgreSQL
+    docker run -d -p 5432:5432 \
+      -e POSTGRES_PASSWORD=postgres \
+      -e POSTGRES_DB=website2ai \
+      postgres:16
+    ```
+  </Step>
+
+  <Step title="Run migrations">
+    ```bash
+    export $(cat .env | xargs)
+    uv run alembic upgrade head
+    ```
+  </Step>
+
+  <Step title="Start services">
+    Open 3 terminals and run:
+
+    **Terminal 1: Celery Worker**
+    ```bash
+    export $(cat .env | xargs)
+    uv run celery -A src.presentation.workers.celery_config worker --loglevel=info
+    ```
+
+    **Terminal 2: FastAPI Server**
+    ```bash
+    export $(cat .env | xargs)
+    uv run uvicorn src.api_server:app --host 0.0.0.0 --port 8000 --reload
+    ```
+
+    **Terminal 3: SSE Server (optional)**
+    ```bash
+    export $(cat .env | xargs)
+    uv run uvicorn src.sse_server:app --host 0.0.0.0 --port 8001 --reload
+    ```
+  </Step>
+</Steps>
+
+## Frontend Setup
+
+<Steps>
+  <Step title="Clone the repository">
+    ```bash
+    git clone https://github.com/website2ai/website.git
+    cd website
+    ```
+  </Step>
+
+  <Step title="Install dependencies">
+    ```bash
+    npm install
+    ```
+  </Step>
+
+  <Step title="Start development server">
+    ```bash
+    npm run dev
+    ```
+
+    The frontend will be available at [http://localhost:3000](http://localhost:3000)
+  </Step>
+</Steps>
+
+## Create Your First Website
+
+<Steps>
+  <Step title="Open the builder">
+    Navigate to [http://localhost:3000/builder](http://localhost:3000/builder)
+  </Step>
+
+  <Step title="Describe your website">
+    Type a prompt like:
+    ```
+    Create a modern landing page for a SaaS product with a hero section,
+    features grid, pricing table, and footer
+    ```
+  </Step>
+
+  <Step title="Watch it build">
+    The AI will:
+    1. Plan the project structure
+    2. Create TypeScript interfaces
+    3. Generate files in parallel
+    4. Show real-time progress updates
+  </Step>
+
+  <Step title="Preview and iterate">
+    - See live preview in Sandpack
+    - Make changes with new prompts
+    - Create versions to branch from earlier states
+  </Step>
+</Steps>
+
+## Using the API Directly
+
+You can also use the REST API to generate websites programmatically:
 
 <CodeGroup>
 
-```bash npm
-npm install website2ai
+```bash cURL
+curl -X POST http://localhost:8000/v1/websites \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "initial_prompt": "Create a todo app with dark mode",
+    "title": "My Todo App"
+  }'
 ```
 
-```bash yarn
-yarn add website2ai
-```
+```javascript JavaScript
+const response = await fetch('http://localhost:8000/v1/websites', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    initial_prompt: 'Create a todo app with dark mode',
+    title: 'My Todo App'
+  })
+});
 
-```bash pnpm
-pnpm add website2ai
-```
+const { base_id, version } = await response.json();
 
-</CodeGroup>
-
-### Make your first request
-
-<CodeGroup>
-
-```javascript Node.js
-const website2ai = require('website2ai');
-
-const result = await website2ai.process('https://example.com');
-console.log(result);
+// Then generate the website
+const genResponse = await fetch(`http://localhost:8000/v1/websites/${base_id}/generate`, {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    prompt: 'Create a todo app with dark mode',
+    base_version: null
+  })
+});
 ```
 
 ```python Python
-import website2ai
+import requests
 
-result = website2ai.process('https://example.com')
-print(result)
+# Create a new project
+response = requests.post(
+    'http://localhost:8000/v1/websites',
+    headers={'Authorization': 'Bearer YOUR_TOKEN'},
+    json={
+        'initial_prompt': 'Create a todo app with dark mode',
+        'title': 'My Todo App'
+    }
+)
+
+data = response.json()
+base_id = data['base_id']
+
+# Generate the website
+gen_response = requests.post(
+    f'http://localhost:8000/v1/websites/{base_id}/generate',
+    headers={'Authorization': 'Bearer YOUR_TOKEN'},
+    json={
+        'prompt': 'Create a todo app with dark mode',
+        'base_version': None
+    }
+)
 ```
 
 </CodeGroup>
 
 ## Next Steps
 
-<CardGroup>
+<CardGroup cols={2}>
+  <Card title="API Reference" icon="square-code" href="/api-reference/introduction">
+    Explore all available endpoints and SSE events
+  </Card>
 
-<Card title="API Reference" icon="square-code" href="/api-reference/introduction">
-  View all available endpoints
-</Card>
+  <Card title="Architecture" icon="diagram-project" href="/essentials/architecture">
+    Learn about the Two-Phase Generation system
+  </Card>
 
-<Card title="Examples" icon="stars" href="/essentials/code">
-  Check out code examples
-</Card>
+  <Card title="Authentication" icon="lock" href="/essentials/authentication">
+    Set up Google OAuth authentication
+  </Card>
 
+  <Card title="Deployment" icon="rocket" href="/essentials/deployment">
+    Deploy to production
+  </Card>
 </CardGroup>
