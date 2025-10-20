@@ -1,0 +1,60 @@
+---
+title: 'Quickstart'
+description: 'Start building with website2ai in under 5 minutes'
+---
+
+## Setup your development
+
+Learn how to get started with website2ai.
+
+### Installation
+
+<CodeGroup>
+
+```bash npm
+npm install website2ai
+```
+
+```bash yarn
+yarn add website2ai
+```
+
+```bash pnpm
+pnpm add website2ai
+```
+
+</CodeGroup>
+
+### Make your first request
+
+<CodeGroup>
+
+```javascript Node.js
+const website2ai = require('website2ai');
+
+const result = await website2ai.process('https://example.com');
+console.log(result);
+```
+
+```python Python
+import website2ai
+
+result = website2ai.process('https://example.com')
+print(result)
+```
+
+</CodeGroup>
+
+## Next Steps
+
+<CardGroup>
+
+<Card title="API Reference" icon="square-code" href="/api-reference/introduction">
+  View all available endpoints
+</Card>
+
+<Card title="Examples" icon="stars" href="/essentials/code">
+  Check out code examples
+</Card>
+
+</CardGroup>

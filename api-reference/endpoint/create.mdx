@@ -1,0 +1,117 @@
+---
+title: 'Create Conversion'
+api: 'POST https://api.website2ai.com/v1/convert'
+description: 'Start a new website conversion'
+---
+
+## Body Parameters
+
+<ParamField body="url" type="string" required>
+  The URL of the website to convert
+</ParamField>
+
+<ParamField body="format" type="string" default="markdown">
+  Output format (markdown, json, html)
+</ParamField>
+
+<ParamField body="options" type="object">
+  Additional conversion options
+
+  <Expandable title="options">
+    <ParamField body="includeImages" type="boolean" default="true">
+      Include images in conversion
+    </ParamField>
+
+    <ParamField body="maxDepth" type="number" default="1">
+      Maximum crawl depth
+    </ParamField>
+
+    <ParamField body="followLinks" type="boolean" default="false">
+      Follow internal links
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="id" type="string">
+  Unique conversion job ID
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  Job status (pending, processing, completed, failed)
+</ResponseField>
+
+<ResponseField name="url" type="string">
+  The URL being converted
+</ResponseField>
+
+## Example
+
+<CodeGroup>
+
+```bash cURL
+curl -X POST https://api.website2ai.com/v1/convert \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://example.com",
+    "format": "markdown",
+    "options": {
+      "includeImages": true,
+      "maxDepth": 2
+    }
+  }'
+```
+
+```javascript Node.js
+const response = await fetch('https://api.website2ai.com/v1/convert', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    url: 'https://example.com',
+    format: 'markdown',
+    options: {
+      includeImages: true,
+      maxDepth: 2
+    }
+  })
+});
+const data = await response.json();
+```
+
+```python Python
+import requests
+
+response = requests.post(
+  'https://api.website2ai.com/v1/convert',
+  headers={'Authorization': 'Bearer YOUR_API_KEY'},
+  json={
+    'url': 'https://example.com',
+    'format': 'markdown',
+    'options': {
+      'includeImages': True,
+      'maxDepth': 2
+    }
+  }
+)
+data = response.json()
+```
+
+</CodeGroup>
+
+## Response Example
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": "abc123",
+    "status": "pending",
+    "url": "https://example.com"
+  }
+}
+```

@@ -1,0 +1,51 @@
+---
+title: 'Code Examples'
+description: 'Examples of how to use website2ai'
+---
+
+## Basic Usage
+
+Here are some common examples of using website2ai:
+
+### Converting a Website
+
+```javascript
+const website2ai = require('website2ai');
+
+async function convertWebsite(url) {
+  const result = await website2ai.process(url);
+  return result;
+}
+
+convertWebsite('https://example.com');
+```
+
+### With Options
+
+```javascript
+const website2ai = require('website2ai');
+
+const options = {
+  format: 'markdown',
+  includeImages: true,
+  maxDepth: 2
+};
+
+const result = await website2ai.process('https://example.com', options);
+```
+
+## Advanced Examples
+
+### Batch Processing
+
+```javascript
+const urls = [
+  'https://example.com/page1',
+  'https://example.com/page2',
+  'https://example.com/page3'
+];
+
+const results = await Promise.all(
+  urls.map(url => website2ai.process(url))
+);
+```

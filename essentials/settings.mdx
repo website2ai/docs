@@ -1,0 +1,53 @@
+---
+title: 'Settings'
+description: 'Configure your documentation'
+---
+
+## Configuration
+
+All configuration is done in the `mint.json` file at the root of your documentation.
+
+## Basic Settings
+
+### Name and Logo
+
+```json
+{
+  "name": "Your Documentation",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  }
+}
+```
+
+### Colors
+
+```json
+{
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  }
+}
+```
+
+## Navigation
+
+Define your documentation structure in the navigation array:
+
+```json
+{
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": ["introduction", "quickstart"]
+    }
+  ]
+}
+```
+
+## Advanced Settings
+
+See the [Mintlify documentation](https://mintlify.com/docs/settings/global) for all available options.
