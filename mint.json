@@ -43,8 +43,19 @@
   ],
   "i18n": {
     "default": "en",
-    "locales": ["en", "ko"]
+    "locales": ["en", "ko"],
+    "showLocaleSelector": true
   },
+  "versions": [
+    {
+      "name": "English",
+      "locale": "en"
+    },
+    {
+      "name": "한국어",
+      "locale": "ko"
+    }
+  ],
   "navigation": [
     {
       "group": "Getting Started",
