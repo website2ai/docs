@@ -1,0 +1,368 @@
+---
+title: 'Managing Versions'
+description: 'Track iterations and manage project versions'
+---
+
+## What Are Versions?
+
+Every time you make a change to your website, website2ai creates a new **version**. Think of versions as snapshots of your project at different points in time.
+
+- **v1**: Your initial website
+- **v2**: After adding dark mode
+- **v3**: After changing colors
+- **v4**: After adding animations
+
+Each version is complete and independent - you can always go back to any previous version.
+
+## Why Use Versions?
+
+### Experiment Safely
+
+Try different approaches without losing your work:
+
+```
+Current version (v3): Clean, minimal design
+
+Try: "Make it more colorful with gradients"
+→ Creates v4
+
+Don't like it? Just go back to v3!
+```
+
+### Track Progress
+
+See how your website evolved:
+
+1. v1: Basic structure
+2. v2: Added features section
+3. v3: Added pricing
+4. v4: Final polish
+
+### A/B Testing
+
+Try different versions of the same feature:
+
+```
+v3: Hero with video background
+v4: Hero with image slider (branched from v2)
+v5: Hero with animated text (branched from v2)
+
+Compare all three and pick the best!
+```
+
+## Viewing Versions
+
+### In the Builder
+
+Click the **version dropdown** in the top bar:
+
+- See all versions with their numbers
+- Each shows the prompt that created it
+- Current version is highlighted
+
+### Version List
+
+```
+✓ v4 - Add smooth scroll animations (current)
+  v3 - Change colors to blue theme
+  v2 - Add dark mode toggle
+  v1 - Create a landing page...
+```
+
+Click any version to switch to it.
+
+## Switching Versions
+
+<Steps>
+  <Step title="Click Version Dropdown">
+    In the top bar, click the version number (e.g., "v4")
+  </Step>
+
+  <Step title="Select Version">
+    Choose which version to view from the list
+  </Step>
+
+  <Step title="Preview Loads">
+    The selected version appears in the preview panel
+  </Step>
+</Steps>
+
+<Warning>
+Switching versions only **views** the old version - it doesn't delete newer versions!
+</Warning>
+
+## Creating Versions
+
+### Linear History (Default)
+
+When you make changes, website2ai creates the next version:
+
+```
+v1 → v2 → v3 → v4
+```
+
+**Example:**
+
+- Start: v1 (basic landing page)
+- Chat: "Add pricing section" → Creates v2
+- Chat: "Add testimonials" → Creates v3
+- Chat: "Make it darker" → Creates v4
+
+Each version builds on the previous one.
+
+### Branching (Advanced)
+
+Want to try different approaches? Branch from an earlier version:
+
+```
+        ┌─ v3 (try blue theme)
+v1 ─ v2 ┤
+        └─ v4 (try dark theme)
+```
+
+**How to branch:**
+
+1. Switch to the version you want to branch from (e.g., v2)
+2. Make your change: "Try a blue color scheme"
+3. This creates v3 based on v2, not the latest version
+
+## Version Comparison
+
+While website2ai doesn't have a built-in visual diff tool, you can:
+
+1. **Open two tabs**: View different versions side-by-side
+2. **Download both**: Compare code locally
+3. **Check file tree**: See which files changed
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start Fresh for Major Changes">
+    For complete redesigns, consider starting a new project instead of creating v20.
+
+    Versions are best for **iterations**, not complete overhauls.
+  </Accordion>
+
+  <Accordion title="Use Descriptive Prompts">
+    Your prompts become version descriptions!
+
+    **Bad**: "Change it"
+
+    **Good**: "Add dark mode toggle to header"
+
+    **Great**: "Replace hero video with animated gradient background"
+  </Accordion>
+
+  <Accordion title="Branch for Experiments">
+    Trying something risky? Branch from your stable version:
+
+    1. Note current version (e.g., v5 is good)
+    2. Make risky change → creates v6
+    3. Don't like it? Go back to v5
+    4. Try different approach → creates v7 from v5
+  </Accordion>
+
+  <Accordion title="Clean Up Unused Versions">
+    Too many versions? Delete ones you won't use.
+
+    (Feature coming soon!)
+  </Accordion>
+</AccordionGroup>
+
+## Example Workflows
+
+### Iterative Improvement
+
+Building a landing page step by step:
+
+<Steps>
+  <Step title="v1: Foundation">
+    ```
+    Create a landing page for a productivity app
+    ```
+
+    Basic structure with hero and CTA
+  </Step>
+
+  <Step title="v2: Add Features">
+    ```
+    Add a features section with 4 features
+    ```
+
+    Now includes features grid
+  </Step>
+
+  <Step title="v3: Pricing">
+    ```
+    Add pricing section with 3 tiers
+    ```
+
+    Complete with pricing
+  </Step>
+
+  <Step title="v4: Polish">
+    ```
+    Add animations and improve spacing
+    ```
+
+    Production-ready!
+  </Step>
+</Steps>
+
+### Trying Alternatives
+
+Want to test different designs:
+
+<Steps>
+  <Step title="Create Base (v1)">
+    ```
+    Create a portfolio homepage
+    ```
+  </Step>
+
+  <Step title="Try Option A (v2)">
+    ```
+    Use a grid layout for projects
+    ```
+
+    Grid-based design
+  </Step>
+
+  <Step title="Try Option B (v3)">
+    Switch back to v1, then:
+
+    ```
+    Use a masonry layout for projects
+    ```
+
+    Masonry-based design (also based on v1)
+  </Step>
+
+  <Step title="Pick Winner">
+    Preview v2 and v3, choose the best one, continue from there
+  </Step>
+</Steps>
+
+## Understanding Version Numbers
+
+### Auto-Incrementing
+
+Version numbers increment automatically:
+
+- First generation: **v1**
+- Second generation: **v2**
+- Third generation: **v3**
+
+You don't choose the number - website2ai handles it!
+
+### Non-Linear Numbers
+
+If you branch, numbers might not be sequential:
+
+```
+v1 → v2 → v5 (latest)
+       ↘ v3 (branch)
+       ↘ v4 (branch)
+```
+
+This is normal! The number shows **order created**, not linear history.
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Can I delete a version?">
+    Not yet, but this feature is coming soon!
+
+    For now, all versions are saved. You can ignore ones you don't need.
+  </Accordion>
+
+  <Accordion title="Do versions count against storage?">
+    Each version stores complete code, but storage is unlimited on all plans.
+  </Accordion>
+
+  <Accordion title="Can I merge versions?">
+    No automatic merging yet.
+
+    **Workaround**: Describe what you want:
+
+    "Combine the hero section from v2 with the features from v3"
+  </Accordion>
+
+  <Accordion title="How do I know which version is deployed?">
+    Versions are for development only. When you download, you choose which version to deploy.
+  </Accordion>
+
+  <Accordion title="Can I name versions?">
+    Not currently - versions use numbers only. Use descriptive prompts so you remember what each version contains!
+  </Accordion>
+</AccordionGroup>
+
+## Tips for Power Users
+
+### Quick Comparison
+
+Want to compare two versions quickly?
+
+1. Open website2ai in two browser windows
+2. Switch to v3 in one, v5 in the other
+3. Compare side-by-side
+
+### Version Tags (Workaround)
+
+Since you can't name versions, use this trick:
+
+```
+v1: "Create landing page"
+v2: "Add pricing - MILESTONE: Ready for review"
+v3: "Try blue colors - EXPERIMENT"
+v4: "Final design - PRODUCTION"
+```
+
+Use keywords in prompts to mark important versions!
+
+### Rollback Strategy
+
+1. **Before experiments**: Note current version number
+2. **Make changes**: Creates new versions
+3. **Don't like it**: Switch back to noted version
+4. **Continue**: Make new changes from stable version
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Using the Builder" icon="wand-magic-sparkles" href="/guides/builder">
+    Master the AI website builder
+  </Card>
+
+  <Card title="Download & Deploy" icon="download" href="/guides/download">
+    Export and deploy your favorite version
+  </Card>
+</CardGroup>
+
+## Real Example
+
+Here's how a real project might evolve:
+
+```
+v1: "Create a SaaS landing page for an email tool"
+    → Basic hero + features + CTA
+
+v2: "Add pricing section with 3 tiers"
+    → Added pricing
+
+v3: "Add customer testimonials carousel"
+    → Added testimonials
+
+v4: "Make the design more modern with gradients"
+    → Visual refresh
+
+v5: "Try a different hero layout" (branched from v2)
+    → Alternative design
+
+v6: "Add FAQ section" (continued from v4)
+    → Final version
+
+Result: v6 is production-ready!
+```
+
+Start experimenting with versions today! 🎨

@@ -1,260 +1,251 @@
 ---
 title: 'Quickstart'
-description: 'Start building AI-powered React websites in minutes'
+description: 'Create your first AI-powered website in 5 minutes'
 ---
 
-## Getting Started
-
-website2ai consists of two main components: a **FastAPI backend** and a **Next.js frontend**. Follow this guide to get everything running locally.
-
-## Prerequisites
-
-- **Node.js 18+** (for frontend)
-- **Python 3.12+** or **Docker** (for backend)
-- **OpenAI API Key** ([Get one here](https://platform.openai.com/api-keys))
-- **Google OAuth Credentials** (optional, for authentication)
-
-## Backend Setup
-
-### Option 1: Docker Compose (Recommended)
-
-The easiest way to run the backend with all required services:
+## Get Started in 3 Steps
 
 <Steps>
-  <Step title="Clone the repository">
-    ```bash
-    git clone https://github.com/website2ai/server.git
-    cd server
-    ```
+  <Step title="Sign Up">
+    Go to [website2ai.com](https://website2ai.com) and click **"Sign in with Google"**
+
+    Your account is created instantly - no email verification needed.
   </Step>
 
-  <Step title="Configure environment">
-    ```bash
-    cp .env.docker .env.docker.local
-    # Edit .env.docker.local and add your credentials:
-    # - OPENAI_API_KEY
-    # - GOOGLE_CLIENT_ID (optional)
-    # - GOOGLE_CLIENT_SECRET (optional)
-    ```
+  <Step title="Open the Builder">
+    Click **"Create New Project"** or navigate to the Builder
   </Step>
 
-  <Step title="Start all services">
-    ```bash
-    docker compose up -d
-    ```
-
-    This starts:
-    - FastAPI server (port 8000)
-    - SSE server (port 8001)
-    - PostgreSQL database
-    - Redis message broker
-    - Celery worker
-  </Step>
-
-  <Step title="Verify it's running">
-    Visit [http://localhost:8000/docs](http://localhost:8000/docs) to see the API documentation.
-  </Step>
-</Steps>
-
-### Option 2: Local Development
-
-If you prefer to run services locally:
-
-<Steps>
-  <Step title="Install dependencies">
-    ```bash
-    uv sync
-    ```
-  </Step>
-
-  <Step title="Start Redis & PostgreSQL">
-    ```bash
-    # Redis
-    docker run -d -p 6379:6379 redis:latest
-
-    # PostgreSQL
-    docker run -d -p 5432:5432 \
-      -e POSTGRES_PASSWORD=postgres \
-      -e POSTGRES_DB=website2ai \
-      postgres:16
-    ```
-  </Step>
-
-  <Step title="Run migrations">
-    ```bash
-    export $(cat .env | xargs)
-    uv run alembic upgrade head
-    ```
-  </Step>
-
-  <Step title="Start services">
-    Open 3 terminals and run:
-
-    **Terminal 1: Celery Worker**
-    ```bash
-    export $(cat .env | xargs)
-    uv run celery -A src.presentation.workers.celery_config worker --loglevel=info
-    ```
-
-    **Terminal 2: FastAPI Server**
-    ```bash
-    export $(cat .env | xargs)
-    uv run uvicorn src.api_server:app --host 0.0.0.0 --port 8000 --reload
-    ```
-
-    **Terminal 3: SSE Server (optional)**
-    ```bash
-    export $(cat .env | xargs)
-    uv run uvicorn src.sse_server:app --host 0.0.0.0 --port 8001 --reload
-    ```
-  </Step>
-</Steps>
-
-## Frontend Setup
-
-<Steps>
-  <Step title="Clone the repository">
-    ```bash
-    git clone https://github.com/website2ai/website.git
-    cd website
-    ```
-  </Step>
-
-  <Step title="Install dependencies">
-    ```bash
-    npm install
-    ```
-  </Step>
-
-  <Step title="Start development server">
-    ```bash
-    npm run dev
-    ```
-
-    The frontend will be available at [http://localhost:3000](http://localhost:3000)
+  <Step title="Describe Your Website">
+    Tell the AI what you want to build and watch it create your website in real-time!
   </Step>
 </Steps>
 
 ## Create Your First Website
 
+### 1. Start a New Project
+
+In the builder, you'll see a chat interface. Type your first prompt:
+
+<Tip>
+**Example prompts to try:**
+- "Create a landing page for a productivity app"
+- "Build a todo app with dark mode"
+- "Make a portfolio website with a hero section and project gallery"
+- "Create an e-commerce product page"
+</Tip>
+
+### 2. Watch AI Build Your Website
+
+Once you hit enter, website2ai will:
+
 <Steps>
-  <Step title="Open the builder">
-    Navigate to [http://localhost:3000/builder](http://localhost:3000/builder)
+  <Step title="Plan the Structure">
+    AI analyzes your request and plans the file structure
   </Step>
 
-  <Step title="Describe your website">
-    Type a prompt like:
-    ```
-    Create a modern landing page for a SaaS product with a hero section,
-    features grid, pricing table, and footer
-    ```
+  <Step title="Generate Code">
+    Watch as files are created one by one in real-time
   </Step>
 
-  <Step title="Watch it build">
-    The AI will:
-    1. Plan the project structure
-    2. Create TypeScript interfaces
-    3. Generate files in parallel
-    4. Show real-time progress updates
-  </Step>
-
-  <Step title="Preview and iterate">
-    - See live preview in Sandpack
-    - Make changes with new prompts
-    - Create versions to branch from earlier states
+  <Step title="Live Preview">
+    See your website appear in the preview panel as it's built
   </Step>
 </Steps>
 
-## Using the API Directly
+This typically takes **30-60 seconds** depending on complexity.
 
-You can also use the REST API to generate websites programmatically:
+### 3. Preview Your Website
 
-<CodeGroup>
+Your website appears in the **live preview panel** on the right side:
 
-```bash cURL
-curl -X POST http://localhost:8000/v1/websites \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "initial_prompt": "Create a todo app with dark mode",
-    "title": "My Todo App"
-  }'
+- ✅ Fully interactive and functional
+- ✅ Responsive design
+- ✅ All components working
+
+### 4. Make Changes
+
+Want to modify your website? Just chat with the AI:
+
+```
+"Add a contact form"
+"Change the colors to blue"
+"Make the hero section taller"
+"Add a dark mode toggle"
 ```
 
-```javascript JavaScript
-const response = await fetch('http://localhost:8000/v1/websites', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer YOUR_TOKEN',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    initial_prompt: 'Create a todo app with dark mode',
-    title: 'My Todo App'
-  })
-});
+Each change creates a new version - you can always go back!
 
-const { base_id, version } = await response.json();
+### 5. Download Your Code
 
-// Then generate the website
-const genResponse = await fetch(`http://localhost:8000/v1/websites/${base_id}/generate`, {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer YOUR_TOKEN',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    prompt: 'Create a todo app with dark mode',
-    base_version: null
-  })
-});
-```
+Click the **"Download"** button to get:
 
-```python Python
-import requests
+- Complete React project with TypeScript
+- All source files
+- package.json with dependencies
+- Ready to run locally or deploy
 
-# Create a new project
-response = requests.post(
-    'http://localhost:8000/v1/websites',
-    headers={'Authorization': 'Bearer YOUR_TOKEN'},
-    json={
-        'initial_prompt': 'Create a todo app with dark mode',
-        'title': 'My Todo App'
-    }
-)
+## Tips for Better Results
 
-data = response.json()
-base_id = data['base_id']
+<AccordionGroup>
+  <Accordion title="Be Specific">
+    **Instead of:** "Create a website"
 
-# Generate the website
-gen_response = requests.post(
-    f'http://localhost:8000/v1/websites/{base_id}/generate',
-    headers={'Authorization': 'Bearer YOUR_TOKEN'},
-    json={
-        'prompt': 'Create a todo app with dark mode',
-        'base_version': None
-    }
-)
-```
+    **Try:** "Create a landing page for a SaaS product with a hero section, 3 feature cards, pricing table, and footer"
+  </Accordion>
 
-</CodeGroup>
+  <Accordion title="Iterate Gradually">
+    Start with the basics, then add features one by one:
+
+    1. "Create a simple todo app"
+    2. "Add a dark mode toggle"
+    3. "Add drag and drop to reorder tasks"
+    4. "Add categories and filters"
+  </Accordion>
+
+  <Accordion title="Reference Modern Sites">
+    "Create a landing page like Vercel's homepage"
+
+    "Build a dashboard similar to Stripe's design"
+  </Accordion>
+
+  <Accordion title="Specify Technologies">
+    "Use Framer Motion for animations"
+
+    "Include a chart using Recharts"
+
+    "Add icons from Lucide React"
+  </Accordion>
+</AccordionGroup>
+
+## Understanding the Interface
+
+### Left Panel: Chat & Code
+
+- **Chat Input**: Describe what you want or request changes
+- **File Tree**: Browse all generated files
+- **Code Editor**: View and copy any file's code
+
+### Right Panel: Live Preview
+
+- **Preview Window**: See your website running live
+- **Responsive Toggle**: Test mobile/tablet/desktop views
+- **Refresh**: Reload the preview if needed
+
+### Top Bar
+
+- **Project Title**: Click to rename
+- **Version Dropdown**: Switch between different versions
+- **Download Button**: Get your complete React project
+
+## Managing Projects
+
+### View All Projects
+
+Click **"My Projects"** to see all your websites:
+
+- See project thumbnails and titles
+- Filter by status (completed, in progress)
+- Sort by date created or updated
+
+### Version History
+
+Every change creates a new version:
+
+1. Click the **version dropdown**
+2. See all versions with their prompts
+3. Click any version to view or restore it
+
+<Tip>
+Versions are numbered automatically: v1, v2, v3...
+
+Each version is a complete snapshot - you can always go back!
+</Tip>
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="API Reference" icon="square-code" href="/api-reference/introduction">
-    Explore all available endpoints and SSE events
+  <Card title="Using the Builder" icon="wand-magic-sparkles" href="/guides/builder">
+    Master the AI website builder
   </Card>
 
-  <Card title="Architecture" icon="diagram-project" href="/essentials/architecture">
-    Learn about the Two-Phase Generation system
+  <Card title="Managing Versions" icon="code-branch" href="/guides/versions">
+    Learn version control and branching
   </Card>
 
-  <Card title="Authentication" icon="lock" href="/essentials/authentication">
-    Set up Google OAuth authentication
+  <Card title="Downloading & Deploying" icon="download" href="/guides/download">
+    Get your code and deploy it
   </Card>
 
-  <Card title="Deployment" icon="rocket" href="/essentials/deployment">
-    Deploy to production
+  <Card title="API Integration" icon="code" href="/api-reference/introduction">
+    Use the API to build programmatically
   </Card>
 </CardGroup>
+
+## Example: Building a Landing Page
+
+Let's walk through creating a complete landing page:
+
+<Steps>
+  <Step title="Initial Prompt">
+    ```
+    Create a modern landing page for a productivity app called "TaskFlow"
+    with a hero section, features section, and CTA
+    ```
+
+    **Result:** Basic landing page structure (v1)
+  </Step>
+
+  <Step title="Add Details">
+    ```
+    Add a pricing section with 3 tiers: Free, Pro, and Enterprise
+    ```
+
+    **Result:** Landing page with pricing (v2)
+  </Step>
+
+  <Step title="Polish Design">
+    ```
+    Make the design more modern with gradients and blur effects
+    ```
+
+    **Result:** Enhanced visual design (v3)
+  </Step>
+
+  <Step title="Add Interactivity">
+    ```
+    Add smooth scroll animations when sections come into view
+    ```
+
+    **Result:** Animated landing page (v4)
+  </Step>
+
+  <Step title="Download">
+    Click **Download** and you have a complete, production-ready React app!
+  </Step>
+</Steps>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How long does generation take?">
+    Most websites generate in **30-90 seconds**:
+    - Simple pages: ~30 seconds
+    - Medium complexity: ~45 seconds
+    - Complex apps: ~60-90 seconds
+  </Accordion>
+
+  <Accordion title="Can I edit the code directly?">
+    You can view and copy code from any file. To make changes, chat with the AI or download the project and edit locally.
+  </Accordion>
+
+  <Accordion title="What happens to old versions?">
+    All versions are saved automatically. You can view, restore, or branch from any previous version.
+  </Accordion>
+
+  <Accordion title="Can I use this commercially?">
+    Yes! All generated code is yours to use however you want - including commercial projects.
+  </Accordion>
+</AccordionGroup>
+
+Ready to create something amazing? [Start building now →](https://website2ai.com/builder)

@@ -49,40 +49,40 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
         "introduction",
-        "quickstart",
+        "quickstart"
+      ]
+    },
+    {
+      "group": "User Guides",
+      "pages": [
+        "guides/builder",
+        "guides/versions",
+        "guides/download"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
         "development"
       ]
     },
     {
-      "group": "Core Concepts",
-      "pages": [
-        "essentials/architecture",
-        "essentials/versioning",
-        "essentials/authentication"
-      ]
-    },
-    {
-      "group": "API Documentation",
+      "group": "API Reference",
       "pages": [
         "api-reference/introduction"
       ]
     },
     {
-      "group": "Project Management",
+      "group": "API Endpoints",
       "pages": [
         "api-reference/endpoint/create-project",
+        "api-reference/endpoint/generate",
         "api-reference/endpoint/list",
         "api-reference/endpoint/get",
-        "api-reference/endpoint/delete"
-      ]
-    },
-    {
-      "group": "Generation",
-      "pages": [
-        "api-reference/endpoint/generate",
+        "api-reference/endpoint/delete",
         "api-reference/endpoint/sse"
       ]
     }

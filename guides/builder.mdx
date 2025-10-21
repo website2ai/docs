@@ -1,0 +1,397 @@
+---
+title: 'Using the Builder'
+description: 'Master the AI website builder'
+---
+
+## Overview
+
+The website2ai builder is where you create and iterate on your websites. It combines a chat interface with real-time code generation and live preview.
+
+## Interface Layout
+
+### Left Panel: Chat & Files
+
+The left side contains:
+
+- **Chat Interface**: Where you communicate with AI
+- **Message History**: All your prompts and AI responses
+- **File Tree**: Browse generated files
+- **Code Viewer**: View any file's source code
+
+### Right Panel: Live Preview
+
+The right side shows:
+
+- **Interactive Preview**: Your website running live
+- **Responsive Controls**: Toggle between desktop, tablet, and mobile views
+- **Reload Button**: Refresh the preview
+
+### Top Bar
+
+- **Project Title**: Click to edit
+- **Version Selector**: Switch between versions
+- **Download Button**: Export your project
+- **Settings**: Project preferences
+
+## Creating a New Project
+
+<Steps>
+  <Step title="Click 'New Project'">
+    From the dashboard, click the **"New Project"** button
+  </Step>
+
+  <Step title="Enter Initial Prompt">
+    Describe what you want to build:
+
+    ```
+    Create a landing page for a SaaS product
+    ```
+  </Step>
+
+  <Step title="Watch Generation">
+    AI will show you progress in real-time:
+    - Planning files...
+    - Creating type definitions...
+    - Generating App.tsx...
+    - Generating components...
+  </Step>
+
+  <Step title="Preview Results">
+    Your website appears in the live preview panel
+  </Step>
+</Steps>
+
+## Writing Effective Prompts
+
+### Be Specific
+
+<Tabs>
+  <Tab title="❌ Too Vague">
+    "Make a website"
+
+    "Create something cool"
+
+    "Build an app"
+  </Tab>
+
+  <Tab title="✅ Clear & Specific">
+    "Create a portfolio website with a hero section, about page, project gallery, and contact form"
+
+    "Build a todo app with categories, due dates, and dark mode"
+
+    "Make a product landing page with features section, pricing tiers, and customer testimonials"
+  </Tab>
+</Tabs>
+
+### Provide Context
+
+Good prompts include:
+
+- **Purpose**: What the website is for
+- **Key Features**: Main functionality needed
+- **Style Preferences**: Design direction
+- **Technologies**: Specific libraries if needed
+
+<CodeGroup>
+
+```text Good Example
+Create a modern portfolio website for a freelance designer.
+Include:
+- Hero section with name and tagline
+- Project gallery with filtering by category
+- About section with skills
+- Contact form
+Use a clean, minimalist design with lots of white space
+```
+
+```text Better Example
+Build a task management app similar to Todoist.
+Features:
+- Add/edit/delete tasks
+- Categories and tags
+- Due dates with calendar
+- Dark mode toggle
+- Drag and drop to reorder
+
+Design: Modern, clean interface with subtle animations
+Colors: Blue primary, dark mode with slate background
+```
+
+</CodeGroup>
+
+## Making Changes
+
+### Iterative Improvements
+
+Once your initial website is generated, you can refine it:
+
+```
+"Add a newsletter signup form to the footer"
+```
+
+```
+"Make the hero section taller and add a background gradient"
+```
+
+```
+"Change the primary color from blue to purple"
+```
+
+```
+"Add smooth scroll animations"
+```
+
+### Major Changes
+
+For bigger changes, be specific about what to modify:
+
+```
+"Replace the grid layout in the features section with a carousel"
+```
+
+```
+"Redesign the pricing section with comparison table instead of cards"
+```
+
+```
+"Add a dashboard page with charts showing user statistics"
+```
+
+## Understanding Progress
+
+### Generation Steps
+
+When AI builds your website, you'll see these phases:
+
+<Steps>
+  <Step title="Planning">
+    AI analyzes your prompt and plans the file structure
+
+    **You'll see**: "Planning 12 files..."
+  </Step>
+
+  <Step title="Type System">
+    Creates TypeScript interfaces for all components
+
+    **You'll see**: "Creating type definitions..."
+  </Step>
+
+  <Step title="File Generation">
+    Generates each file (happens in parallel)
+
+    **You'll see**:
+    - ✓ package.json
+    - ✓ src/App.tsx
+    - ✓ src/components/Header.tsx
+    - ...
+  </Step>
+
+  <Step title="Complete">
+    All files generated and ready
+
+    **You'll see**: "✨ Generation complete!"
+  </Step>
+</Steps>
+
+### Progress Indicators
+
+- **Green checkmarks**: File completed
+- **Spinning icon**: Currently generating
+- **Error icon**: Generation failed (retry or rephrase)
+
+## Browsing Generated Code
+
+### File Tree
+
+Click any file in the tree to view its code:
+
+- **Blue files**: Currently selected
+- **Folder icons**: Expand/collapse directories
+- **Search**: Find files by name
+
+### Code Viewer
+
+When viewing a file:
+
+- **Syntax highlighting**: Color-coded TypeScript/CSS/JSON
+- **Line numbers**: Easy reference
+- **Copy button**: Copy entire file or selected text
+- **Download**: Get individual file
+
+## Preview Controls
+
+### Responsive Testing
+
+Toggle between device sizes:
+
+- **Desktop**: Full width (1920px)
+- **Tablet**: iPad size (768px)
+- **Mobile**: iPhone size (375px)
+
+Your generated website is automatically responsive!
+
+### Refresh Preview
+
+If preview doesn't update:
+
+1. Click the **refresh icon**
+2. Wait a few seconds
+3. Changes should appear
+
+## Tips & Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start Simple, Then Iterate">
+    Don't try to describe everything in one prompt.
+
+    **Step 1**: "Create a landing page with hero and features"
+
+    **Step 2**: "Add pricing section"
+
+    **Step 3**: "Add customer testimonials"
+
+    **Step 4**: "Add FAQ section"
+  </Accordion>
+
+  <Accordion title="Reference Examples">
+    Mention websites you like:
+
+    "Design similar to Linear's homepage"
+
+    "Use a card layout like Airbnb"
+
+    "Modern style like Stripe's website"
+  </Accordion>
+
+  <Accordion title="Specify Libraries">
+    Want specific tools? Just ask:
+
+    "Use Framer Motion for animations"
+
+    "Include React Hook Form for the contact form"
+
+    "Add charts using Recharts"
+  </Accordion>
+
+  <Accordion title="Use Version Control">
+    Trying something experimental?
+
+    Before making big changes, note your current version number. If you don't like the result, you can revert.
+  </Accordion>
+</AccordionGroup>
+
+## Common Issues
+
+### Preview Not Updating
+
+**Solution**: Click the refresh button in preview panel
+
+### Generation Taking Too Long
+
+**Normal time**: 30-90 seconds
+
+**If longer**: Check your internet connection or try refreshing the page
+
+### Code Has Errors
+
+**Solution**: Describe the issue to AI:
+
+```
+"The submit button isn't working, please fix it"
+```
+
+```
+"There's a TypeScript error in Header.tsx"
+```
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `Cmd/Ctrl + Enter` | Send message |
+| `Cmd/Ctrl + K` | Open file search |
+| `Cmd/Ctrl + B` | Toggle sidebar |
+| `Cmd/Ctrl + /` | Toggle code viewer |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Managing Versions" icon="code-branch" href="/guides/versions">
+    Learn about version history and branching
+  </Card>
+
+  <Card title="Download & Deploy" icon="download" href="/guides/download">
+    Export your project and deploy it
+  </Card>
+
+  <Card title="API Integration" icon="code" href="/api-reference/introduction">
+    Automate with the API
+  </Card>
+</CardGroup>
+
+## Example Workflows
+
+### Building a Landing Page
+
+<Steps>
+  <Step title="Initial Structure">
+    ```
+    Create a landing page for a project management tool called "FlowBoard"
+    with hero, features, and CTA sections
+    ```
+  </Step>
+
+  <Step title="Add Content">
+    ```
+    Add a pricing section with 3 tiers and a comparison table
+    ```
+  </Step>
+
+  <Step title="Visual Polish">
+    ```
+    Add gradient backgrounds and glass morphism effects
+    ```
+  </Step>
+
+  <Step title="Interactivity">
+    ```
+    Add smooth scroll and fade-in animations
+    ```
+  </Step>
+
+  <Step title="Final Touches">
+    ```
+    Add a testimonials carousel and FAQ accordion
+    ```
+  </Step>
+</Steps>
+
+### Building a Dashboard
+
+<Steps>
+  <Step title="Layout">
+    ```
+    Create a dashboard with sidebar navigation and main content area
+    ```
+  </Step>
+
+  <Step title="Add Charts">
+    ```
+    Add a revenue chart and user growth chart using Recharts
+    ```
+  </Step>
+
+  <Step title="Data Tables">
+    ```
+    Add a table showing recent transactions with sorting
+    ```
+  </Step>
+
+  <Step title="Widgets">
+    ```
+    Add metric cards showing total revenue, users, and conversion rate
+    ```
+  </Step>
+</Steps>
+
+Happy building! 🚀

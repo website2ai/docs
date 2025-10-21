@@ -1,0 +1,476 @@
+---
+title: 'Download & Deploy'
+description: 'Export your project and deploy it anywhere'
+---
+
+## Downloading Your Project
+
+### Quick Download
+
+<Steps>
+  <Step title="Switch to Desired Version">
+    Make sure you're viewing the version you want to download
+  </Step>
+
+  <Step title="Click Download">
+    Click the **Download** button in the top bar
+  </Step>
+
+  <Step title="Get ZIP File">
+    A ZIP file downloads containing your complete React project
+  </Step>
+</Steps>
+
+### What's Included
+
+Your download contains a **complete, ready-to-run React application**:
+
+```
+my-website.zip
+├── package.json          # Dependencies and scripts
+├── package-lock.json     # Locked dependencies
+├── tsconfig.json         # TypeScript configuration
+├── tailwind.config.js    # Tailwind CSS config
+├── postcss.config.js     # PostCSS config
+├── index.html            # Entry HTML file
+├── public/               # Static assets
+└── src/                  # Source code
+    ├── App.tsx          # Main component
+    ├── main.tsx         # Entry point
+    ├── index.css        # Global styles
+    ├── components/      # React components
+    ├── hooks/           # Custom hooks (if any)
+    ├── utils/           # Utility functions
+    └── types/           # TypeScript types
+```
+
+## Running Locally
+
+### Prerequisites
+
+- **Node.js 18+** ([Download here](https://nodejs.org/))
+- **npm** (comes with Node.js)
+
+### Setup & Run
+
+<Steps>
+  <Step title="Extract ZIP">
+    Unzip the downloaded file to your desired location
+  </Step>
+
+  <Step title="Open Terminal">
+    Navigate to the extracted folder:
+
+    ```bash
+    cd path/to/your-website
+    ```
+  </Step>
+
+  <Step title="Install Dependencies">
+    ```bash
+    npm install
+    ```
+
+    This installs all required packages (React, TypeScript, Tailwind CSS, etc.)
+  </Step>
+
+  <Step title="Start Dev Server">
+    ```bash
+    npm run dev
+    ```
+
+    Your website opens at `http://localhost:5173`
+  </Step>
+</Steps>
+
+<Tip>
+**Development server features:**
+- Hot reload (changes appear instantly)
+- TypeScript error checking
+- Fast refresh
+</Tip>
+
+## Deployment Options
+
+### Vercel (Recommended)
+
+**Best for**: Most React apps, automatic deployments
+
+<Steps>
+  <Step title="Create Vercel Account">
+    Sign up at [vercel.com](https://vercel.com) (free)
+  </Step>
+
+  <Step title="Install Vercel CLI">
+    ```bash
+    npm i -g vercel
+    ```
+  </Step>
+
+  <Step title="Deploy">
+    From your project folder:
+
+    ```bash
+    vercel
+    ```
+
+    Follow the prompts, and you're live!
+  </Step>
+</Steps>
+
+**Your site will be at**: `https://your-project.vercel.app`
+
+<Accordion title="Vercel Benefits">
+  - Free tier with generous limits
+  - Automatic HTTPS
+  - Global CDN
+  - Auto-deploy from Git
+  - Preview deployments
+  - Custom domains
+</Accordion>
+
+### Netlify
+
+**Best for**: Simple deploys, form handling
+
+<Steps>
+  <Step title="Build Project">
+    ```bash
+    npm run build
+    ```
+
+    Creates a `dist/` folder with production files
+  </Step>
+
+  <Step title="Drag & Drop Deploy">
+    1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
+    2. Drag your `dist/` folder
+    3. Done!
+  </Step>
+</Steps>
+
+### GitHub Pages
+
+**Best for**: Personal projects, portfolios
+
+<Steps>
+  <Step title="Install gh-pages">
+    ```bash
+    npm install --save-dev gh-pages
+    ```
+  </Step>
+
+  <Step title="Update package.json">
+    Add to `package.json`:
+
+    ```json
+    {
+      "homepage": "https://yourusername.github.io/repo-name",
+      "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+      }
+    }
+    ```
+  </Step>
+
+  <Step title="Deploy">
+    ```bash
+    npm run deploy
+    ```
+
+    Your site is live at the homepage URL!
+  </Step>
+</Steps>
+
+### Cloudflare Pages
+
+**Best for**: Fast global distribution
+
+<Steps>
+  <Step title="Create Account">
+    Sign up at [pages.cloudflare.com](https://pages.cloudflare.com)
+  </Step>
+
+  <Step title="Connect Git">
+    Connect your GitHub/GitLab repo
+  </Step>
+
+  <Step title="Configure Build">
+    - Build command: `npm run build`
+    - Build output: `dist`
+  </Step>
+
+  <Step title="Deploy">
+    Cloudflare automatically builds and deploys!
+  </Step>
+</Steps>
+
+## Customizing After Download
+
+### Editing Code
+
+Your project uses standard React + TypeScript:
+
+```typescript
+// src/App.tsx
+export default function App() {
+  return (
+    <div className="min-h-screen">
+      {/* Your components */}
+    </div>
+  );
+}
+```
+
+Edit any file and see changes instantly with `npm run dev`!
+
+### Adding Features
+
+Install new packages:
+
+```bash
+# Add a package
+npm install package-name
+
+# Example: Add React Router
+npm install react-router-dom
+```
+
+### Changing Styles
+
+Your project uses **Tailwind CSS**:
+
+```tsx
+// Change colors, spacing, etc. using Tailwind classes
+<button className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">
+  Click me
+</button>
+```
+
+Customize theme in `tailwind.config.js`:
+
+```javascript
+export default {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3B82F6',
+        secondary: '#8B5CF6',
+      }
+    }
+  }
+}
+```
+
+## Environment Variables
+
+### Adding Environment Variables
+
+Create `.env` file in project root:
+
+```bash
+# .env
+VITE_API_URL=https://api.yourapp.com
+VITE_API_KEY=your-api-key-here
+```
+
+Use in code:
+
+```typescript
+const apiUrl = import.meta.env.VITE_API_URL;
+```
+
+### Deployment Environment Variables
+
+<Tabs>
+  <Tab title="Vercel">
+    1. Go to Project Settings → Environment Variables
+    2. Add your variables
+    3. Redeploy
+  </Tab>
+
+  <Tab title="Netlify">
+    1. Site Settings → Environment Variables
+    2. Add key-value pairs
+    3. Redeploy
+  </Tab>
+
+  <Tab title="Cloudflare Pages">
+    1. Settings → Environment Variables
+    2. Add for Production/Preview
+    3. Redeploy
+  </Tab>
+</Tabs>
+
+## Custom Domains
+
+### Vercel
+
+<Steps>
+  <Step title="Add Domain">
+    Project Settings → Domains → Add
+  </Step>
+
+  <Step title="Configure DNS">
+    Point your domain to Vercel:
+    - A record: `76.76.21.21`
+    - CNAME: `cname.vercel-dns.com`
+  </Step>
+
+  <Step title="Automatic HTTPS">
+    Vercel automatically provisions SSL certificates
+  </Step>
+</Steps>
+
+### Netlify
+
+<Steps>
+  <Step title="Add Domain">
+    Domain Settings → Add custom domain
+  </Step>
+
+  <Step title="Update Nameservers">
+    Point your domain's nameservers to Netlify's
+  </Step>
+
+  <Step title="Enable HTTPS">
+    Automatic with Let's Encrypt
+  </Step>
+</Steps>
+
+## Optimization
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+Creates optimized production build:
+- ✅ Minified JavaScript
+- ✅ Optimized CSS
+- ✅ Compressed assets
+- ✅ Tree-shaken code
+
+### Performance Tips
+
+<AccordionGroup>
+  <Accordion title="Image Optimization">
+    Use next-gen formats and lazy loading:
+
+    ```tsx
+    <img
+      src="/image.webp"
+      loading="lazy"
+      alt="Description"
+    />
+    ```
+  </Accordion>
+
+  <Accordion title="Code Splitting">
+    Use dynamic imports for large components:
+
+    ```tsx
+    const HeavyComponent = lazy(() => import('./HeavyComponent'));
+    ```
+  </Accordion>
+
+  <Accordion title="CDN Assets">
+    Host large files on CDN (Cloudflare, AWS S3)
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="npm install fails">
+    **Solution**:
+    - Update Node.js to latest version
+    - Clear npm cache: `npm cache clean --force`
+    - Delete `node_modules` and retry
+  </Accordion>
+
+  <Accordion title="Build errors">
+    **Common fixes**:
+    - Check TypeScript errors: `npm run type-check`
+    - Update dependencies: `npm update`
+    - Check console for specific errors
+  </Accordion>
+
+  <Accordion title="Deployment fails">
+    **Checklist**:
+    - Build works locally? `npm run build`
+    - Environment variables set?
+    - Build command correct in platform settings?
+  </Accordion>
+
+  <Accordion title="Site looks different deployed">
+    **Possible causes**:
+    - Check environment variables
+    - Verify build output includes all assets
+    - Check browser console for errors
+  </Accordion>
+</AccordionGroup>
+
+## Continuous Deployment
+
+### Git + Vercel
+
+<Steps>
+  <Step title="Push to GitHub">
+    ```bash
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git branch -M main
+    git remote add origin https://github.com/username/repo.git
+    git push -u origin main
+    ```
+  </Step>
+
+  <Step title="Import to Vercel">
+    - Go to vercel.com
+    - Click "New Project"
+    - Import your GitHub repo
+  </Step>
+
+  <Step title="Auto-Deploy">
+    Every `git push` automatically deploys!
+  </Step>
+</Steps>
+
+### Git + Netlify
+
+Same process as Vercel - connect repo and Netlify builds on every push!
+
+## Comparison: Deployment Platforms
+
+| Platform | Free Tier | Build Time | CDN | Best For |
+|----------|-----------|------------|-----|----------|
+| **Vercel** | Generous | Fast | Global | Most projects |
+| **Netlify** | Good | Fast | Global | Static sites |
+| **Cloudflare** | Unlimited | Medium | Global | High traffic |
+| **GitHub Pages** | Free | Slow | Limited | Portfolios |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="React Documentation" icon="react" href="https://react.dev">
+    Learn more about React
+  </Card>
+
+  <Card title="Tailwind CSS" icon="palette" href="https://tailwindcss.com">
+    Customize your styles
+  </Card>
+
+  <Card title="TypeScript" icon="code" href="https://www.typescriptlang.org">
+    Master TypeScript
+  </Card>
+
+  <Card title="Vite" icon="bolt" href="https://vitejs.dev">
+    Understand your build tool
+  </Card>
+</CardGroup>
+
+Your website is ready for the world! 🚀
