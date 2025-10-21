@@ -1,0 +1,476 @@
+---
+title: '다운로드 및 배포'
+description: '프로젝트 내보내기 및 어디든 배포하기'
+---
+
+## 프로젝트 다운로드
+
+### 빠른 다운로드
+
+<Steps>
+  <Step title="원하는 버전으로 전환">
+    다운로드하려는 버전을 보고 있는지 확인하세요
+  </Step>
+
+  <Step title="다운로드 클릭">
+    상단 바의 **다운로드** 버튼을 클릭하세요
+  </Step>
+
+  <Step title="ZIP 파일 받기">
+    완전한 React 프로젝트가 포함된 ZIP 파일이 다운로드됩니다
+  </Step>
+</Steps>
+
+### 포함된 내용
+
+다운로드에는 **완전하고 실행 가능한 React 애플리케이션**이 포함됩니다:
+
+```
+my-website.zip
+├── package.json          # 종속성 및 스크립트
+├── package-lock.json     # 잠긴 종속성
+├── tsconfig.json         # TypeScript 구성
+├── tailwind.config.js    # Tailwind CSS 구성
+├── postcss.config.js     # PostCSS 구성
+├── index.html            # 진입점 HTML 파일
+├── public/               # 정적 자산
+└── src/                  # 소스 코드
+    ├── App.tsx          # 메인 컴포넌트
+    ├── main.tsx         # 진입점
+    ├── index.css        # 전역 스타일
+    ├── components/      # React 컴포넌트
+    ├── hooks/           # 커스텀 훅 (있는 경우)
+    ├── utils/           # 유틸리티 함수
+    └── types/           # TypeScript 타입
+```
+
+## 로컬에서 실행
+
+### 사전 요구 사항
+
+- **Node.js 18+** ([여기서 다운로드](https://nodejs.org/))
+- **npm** (Node.js와 함께 제공)
+
+### 설정 및 실행
+
+<Steps>
+  <Step title="ZIP 압축 풀기">
+    다운로드한 파일을 원하는 위치에 압축 해제하세요
+  </Step>
+
+  <Step title="터미널 열기">
+    압축을 푼 폴더로 이동:
+
+    ```bash
+    cd path/to/your-website
+    ```
+  </Step>
+
+  <Step title="종속성 설치">
+    ```bash
+    npm install
+    ```
+
+    필요한 모든 패키지를 설치합니다 (React, TypeScript, Tailwind CSS 등)
+  </Step>
+
+  <Step title="개발 서버 시작">
+    ```bash
+    npm run dev
+    ```
+
+    웹사이트가 `http://localhost:5173`에서 열립니다
+  </Step>
+</Steps>
+
+<Tip>
+**개발 서버 기능:**
+- 핫 리로드 (변경 사항이 즉시 나타남)
+- TypeScript 오류 확인
+- 빠른 새로고침
+</Tip>
+
+## 배포 옵션
+
+### Vercel (권장)
+
+**최적:** 대부분의 React 앱, 자동 배포
+
+<Steps>
+  <Step title="Vercel 계정 만들기">
+    [vercel.com](https://vercel.com)에서 가입 (무료)
+  </Step>
+
+  <Step title="Vercel CLI 설치">
+    ```bash
+    npm i -g vercel
+    ```
+  </Step>
+
+  <Step title="배포">
+    프로젝트 폴더에서:
+
+    ```bash
+    vercel
+    ```
+
+    프롬프트를 따르면 바로 라이브됩니다!
+  </Step>
+</Steps>
+
+**사이트 주소**: `https://your-project.vercel.app`
+
+<Accordion title="Vercel 장점">
+  - 넉넉한 한도의 무료 등급
+  - 자동 HTTPS
+  - 글로벌 CDN
+  - Git에서 자동 배포
+  - 미리보기 배포
+  - 커스텀 도메인
+</Accordion>
+
+### Netlify
+
+**최적:** 간단한 배포, 폼 처리
+
+<Steps>
+  <Step title="프로젝트 빌드">
+    ```bash
+    npm run build
+    ```
+
+    운영 파일이 있는 `dist/` 폴더 생성
+  </Step>
+
+  <Step title="드래그 앤 드롭 배포">
+    1. [app.netlify.com/drop](https://app.netlify.com/drop)으로 이동
+    2. `dist/` 폴더를 드래그
+    3. 완료!
+  </Step>
+</Steps>
+
+### GitHub Pages
+
+**최적:** 개인 프로젝트, 포트폴리오
+
+<Steps>
+  <Step title="gh-pages 설치">
+    ```bash
+    npm install --save-dev gh-pages
+    ```
+  </Step>
+
+  <Step title="package.json 업데이트">
+    `package.json`에 추가:
+
+    ```json
+    {
+      "homepage": "https://yourusername.github.io/repo-name",
+      "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+      }
+    }
+    ```
+  </Step>
+
+  <Step title="배포">
+    ```bash
+    npm run deploy
+    ```
+
+    사이트가 홈페이지 URL에서 라이브됩니다!
+  </Step>
+</Steps>
+
+### Cloudflare Pages
+
+**최적:** 빠른 글로벌 배포
+
+<Steps>
+  <Step title="계정 만들기">
+    [pages.cloudflare.com](https://pages.cloudflare.com)에서 가입
+  </Step>
+
+  <Step title="Git 연결">
+    GitHub/GitLab 저장소를 연결하세요
+  </Step>
+
+  <Step title="빌드 구성">
+    - 빌드 명령: `npm run build`
+    - 빌드 출력: `dist`
+  </Step>
+
+  <Step title="배포">
+    Cloudflare가 자동으로 빌드하고 배포합니다!
+  </Step>
+</Steps>
+
+## 다운로드 후 커스터마이징
+
+### 코드 편집
+
+프로젝트는 표준 React + TypeScript를 사용합니다:
+
+```typescript
+// src/App.tsx
+export default function App() {
+  return (
+    <div className="min-h-screen">
+      {/* 컴포넌트 */}
+    </div>
+  );
+}
+```
+
+파일을 편집하고 `npm run dev`로 즉시 변경 사항을 확인하세요!
+
+### 기능 추가
+
+새 패키지 설치:
+
+```bash
+# 패키지 추가
+npm install package-name
+
+# 예시: React Router 추가
+npm install react-router-dom
+```
+
+### 스타일 변경
+
+프로젝트는 **Tailwind CSS**를 사용합니다:
+
+```tsx
+// Tailwind 클래스를 사용하여 색상, 간격 등 변경
+<button className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">
+  클릭하세요
+</button>
+```
+
+`tailwind.config.js`에서 테마 커스터마이징:
+
+```javascript
+export default {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3B82F6',
+        secondary: '#8B5CF6',
+      }
+    }
+  }
+}
+```
+
+## 환경 변수
+
+### 환경 변수 추가
+
+프로젝트 루트에 `.env` 파일 생성:
+
+```bash
+# .env
+VITE_API_URL=https://api.yourapp.com
+VITE_API_KEY=your-api-key-here
+```
+
+코드에서 사용:
+
+```typescript
+const apiUrl = import.meta.env.VITE_API_URL;
+```
+
+### 배포 환경 변수
+
+<Tabs>
+  <Tab title="Vercel">
+    1. 프로젝트 설정 → 환경 변수로 이동
+    2. 변수 추가
+    3. 재배포
+  </Tab>
+
+  <Tab title="Netlify">
+    1. 사이트 설정 → 환경 변수
+    2. 키-값 쌍 추가
+    3. 재배포
+  </Tab>
+
+  <Tab title="Cloudflare Pages">
+    1. 설정 → 환경 변수
+    2. Production/Preview에 추가
+    3. 재배포
+  </Tab>
+</Tabs>
+
+## 커스텀 도메인
+
+### Vercel
+
+<Steps>
+  <Step title="도메인 추가">
+    프로젝트 설정 → 도메인 → 추가
+  </Step>
+
+  <Step title="DNS 구성">
+    도메인을 Vercel로 포인트:
+    - A 레코드: `76.76.21.21`
+    - CNAME: `cname.vercel-dns.com`
+  </Step>
+
+  <Step title="자동 HTTPS">
+    Vercel이 자동으로 SSL 인증서를 프로비저닝합니다
+  </Step>
+</Steps>
+
+### Netlify
+
+<Steps>
+  <Step title="도메인 추가">
+    도메인 설정 → 커스텀 도메인 추가
+  </Step>
+
+  <Step title="네임서버 업데이트">
+    도메인의 네임서버를 Netlify의 것으로 포인트
+  </Step>
+
+  <Step title="HTTPS 활성화">
+    Let's Encrypt로 자동
+  </Step>
+</Steps>
+
+## 최적화
+
+### 운영용 빌드
+
+```bash
+npm run build
+```
+
+최적화된 운영 빌드 생성:
+- ✅ 최소화된 JavaScript
+- ✅ 최적화된 CSS
+- ✅ 압축된 자산
+- ✅ 트리 쉐이킹된 코드
+
+### 성능 팁
+
+<AccordionGroup>
+  <Accordion title="이미지 최적화">
+    차세대 형식 및 지연 로딩 사용:
+
+    ```tsx
+    <img
+      src="/image.webp"
+      loading="lazy"
+      alt="설명"
+    />
+    ```
+  </Accordion>
+
+  <Accordion title="코드 분할">
+    큰 컴포넌트에 동적 임포트 사용:
+
+    ```tsx
+    const HeavyComponent = lazy(() => import('./HeavyComponent'));
+    ```
+  </Accordion>
+
+  <Accordion title="CDN 자산">
+    CDN에 대용량 파일 호스팅 (Cloudflare, AWS S3)
+  </Accordion>
+</AccordionGroup>
+
+## 문제 해결
+
+<AccordionGroup>
+  <Accordion title="npm install 실패">
+    **해결책**:
+    - Node.js를 최신 버전으로 업데이트
+    - npm 캐시 정리: `npm cache clean --force`
+    - `node_modules` 삭제 후 재시도
+  </Accordion>
+
+  <Accordion title="빌드 오류">
+    **일반적인 수정:**
+    - TypeScript 오류 확인: `npm run type-check`
+    - 종속성 업데이트: `npm update`
+    - 콘솔에서 특정 오류 확인
+  </Accordion>
+
+  <Accordion title="배포 실패">
+    **체크리스트**:
+    - 로컬에서 빌드가 작동하나요? `npm run build`
+    - 환경 변수가 설정되었나요?
+    - 플랫폼 설정에서 빌드 명령이 올바른가요?
+  </Accordion>
+
+  <Accordion title="배포된 사이트가 다르게 보임">
+    **가능한 원인**:
+    - 환경 변수 확인
+    - 빌드 출력에 모든 자산이 포함되었는지 확인
+    - 브라우저 콘솔에서 오류 확인
+  </Accordion>
+</AccordionGroup>
+
+## 지속적 배포
+
+### Git + Vercel
+
+<Steps>
+  <Step title="GitHub에 푸시">
+    ```bash
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git branch -M main
+    git remote add origin https://github.com/username/repo.git
+    git push -u origin main
+    ```
+  </Step>
+
+  <Step title="Vercel로 가져오기">
+    - vercel.com으로 이동
+    - "새 프로젝트" 클릭
+    - GitHub 저장소 가져오기
+  </Step>
+
+  <Step title="자동 배포">
+    모든 `git push`가 자동으로 배포됩니다!
+  </Step>
+</Steps>
+
+### Git + Netlify
+
+Vercel과 동일한 프로세스 - 저장소를 연결하면 Netlify가 모든 푸시에서 빌드합니다!
+
+## 비교: 배포 플랫폼
+
+| 플랫폼 | 무료 등급 | 빌드 시간 | CDN | 최적 |
+|----------|-----------|------------|-----|----------|
+| **Vercel** | 넉넉함 | 빠름 | 글로벌 | 대부분의 프로젝트 |
+| **Netlify** | 좋음 | 빠름 | 글로벌 | 정적 사이트 |
+| **Cloudflare** | 무제한 | 중간 | 글로벌 | 높은 트래픽 |
+| **GitHub Pages** | 무료 | 느림 | 제한적 | 포트폴리오 |
+
+## 다음 단계
+
+<CardGroup cols={2}>
+  <Card title="React 문서" icon="react" href="https://react.dev">
+    React에 대해 더 배우기
+  </Card>
+
+  <Card title="Tailwind CSS" icon="palette" href="https://tailwindcss.com">
+    스타일 커스터마이징
+  </Card>
+
+  <Card title="TypeScript" icon="code" href="https://www.typescriptlang.org">
+    TypeScript 마스터하기
+  </Card>
+
+  <Card title="Vite" icon="bolt" href="https://vitejs.dev">
+    빌드 도구 이해하기
+  </Card>
+</CardGroup>
+
+웹사이트가 세상을 위해 준비되었습니다! 🚀

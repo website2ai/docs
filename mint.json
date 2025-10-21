@@ -41,6 +41,10 @@
       "url": "https://mintlify.com/blog"
     }
   ],
+  "i18n": {
+    "default": "en",
+    "locales": ["en", "ko"]
+  },
   "navigation": [
     {
       "group": "Getting Started",
@@ -61,6 +65,30 @@
       "group": "Resources",
       "pages": [
         "development"
+      ]
+    },
+    {
+      "group": "시작하기",
+      "locale": "ko",
+      "pages": [
+        "ko/introduction",
+        "ko/quickstart"
+      ]
+    },
+    {
+      "group": "사용자 가이드",
+      "locale": "ko",
+      "pages": [
+        "ko/guides/builder",
+        "ko/guides/versions",
+        "ko/guides/download"
+      ]
+    },
+    {
+      "group": "리소스",
+      "locale": "ko",
+      "pages": [
+        "ko/development"
       ]
     }
   ],
