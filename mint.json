@@ -59,6 +59,7 @@
   "navigation": [
     {
       "group": "Getting Started",
+      "version": "en",
       "pages": [
         "introduction",
         "quickstart"
@@ -66,6 +67,7 @@
     },
     {
       "group": "User Guides",
+      "version": "en",
       "pages": [
         "guides/builder",
         "guides/versions",
@@ -74,12 +76,14 @@
     },
     {
       "group": "Resources",
+      "version": "en",
       "pages": [
         "development"
       ]
     },
     {
       "group": "시작하기",
+      "version": "ko",
       "pages": [
         "ko/introduction",
         "ko/quickstart"
@@ -87,6 +91,7 @@
     },
     {
       "group": "사용자 가이드",
+      "version": "ko",
       "pages": [
         "ko/guides/builder",
         "ko/guides/versions",
@@ -95,6 +100,7 @@
     },
     {
       "group": "리소스",
+      "version": "ko",
       "pages": [
         "ko/development"
       ]
