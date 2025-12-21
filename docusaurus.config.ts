@@ -11,8 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: "https://website2ai.github.io",
-  baseUrl: "/docs/",
+  url: "https://docs.website2.ai",
+  baseUrl: "/",
 
   organizationName: "website2ai",
   projectName: "docs",
