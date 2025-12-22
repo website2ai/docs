@@ -79,7 +79,7 @@ For teams and advanced use cases:
 
 In the Credits tab, you'll see:
 
-- **Transaction type** - charge (purchase), usage, refund, or bonus
+- **Transaction type** - charge (purchase), usage, or bonus
 - **Amount** - positive for credits received, negative for usage
 - **Description** - what the credits were used for
 - **Date** - when the transaction occurred
@@ -87,7 +87,6 @@ In the Credits tab, you'll see:
 Transaction types are color-coded:
 - **Green** - Purchased credits (charge)
 - **Purple** - Bonus credits (signup, promotions)
-- **Blue** - Refunded credits
 - **Gray** - Used credits (usage)
 
 ### Credit Refresh Schedule
@@ -157,10 +156,6 @@ No, purchased credits and monthly subscription credits are permanent and never e
 **What happens if I run out of credits mid-generation?**
 
 The current generation will complete. You'll need to add credits before making further changes.
-
-**Can I get a refund on unused credits?**
-
-Contact support@website2.ai for refund requests. Refunds are handled on a case-by-case basis.
 
 **Why do daily credits expire?**
 
