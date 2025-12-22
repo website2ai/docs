@@ -216,14 +216,11 @@ Configure your project:
 | Tailwind CSS | 3.x |
 | Vite | 5.x |
 
-### Hosting Infrastructure
+### Hosting
 
-| Component | Provider |
-|-----------|----------|
-| CDN | Cloudflare |
-| Storage | Cloudflare R2 |
-| SSL | Let's Encrypt (auto) |
-| Custom Domains | Fly.io + Caddy |
+- **Global CDN** - Fast load times worldwide
+- **Automatic SSL** - HTTPS for all sites
+- **99.9% Uptime** - Reliable hosting infrastructure
 
 ### Supported Browsers
 
