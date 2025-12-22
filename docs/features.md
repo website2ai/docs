@@ -41,16 +41,9 @@ Website2AI generates modern, clean code:
 - **Vite** - Fast build tooling
 - **Responsive design** - Mobile-first approach
 
-### AI Models
+### AI Model
 
-Choose from multiple AI models:
-
-| Model | Characteristics |
-|-------|-----------------|
-| GPT-4o | Best overall quality, balanced speed |
-| GPT-4o Mini | Faster, good for simple changes |
-| Claude | Excellent for complex logic |
-| DeepSeek | Cost-effective alternative |
+Website2AI uses **GPT-5.2**, the latest and most capable model for website generation. It excels at understanding complex requirements and generating high-quality, production-ready code.
 
 ## Chat-Based Editing
 
@@ -161,10 +154,9 @@ Generate custom images for your website:
 - **Product shots** - Placeholder images
 - **Icons** - Custom iconography
 
-Image generation uses additional credits. Multiple image providers available:
-- Google Imagen
-- OpenAI DALL-E
-- Runware (cost-effective)
+Image generation uses additional credits. Powered by:
+- **GPT Image 1.5** - High-quality, photorealistic images
+- **Nano Banana Pro2** - Fast, cost-effective generation
 
 ## Preview Modes
 
