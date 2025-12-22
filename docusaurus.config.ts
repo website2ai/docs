@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Website2AI Docs",
-  tagline: "AI로 웹사이트를 만드세요",
+  tagline: "Turn your ideas into websites with AI",
   favicon: "img/favicon.ico",
 
   future: {
@@ -21,8 +21,8 @@ const config: Config = {
   onBrokenLinks: "throw",
 
   i18n: {
-    defaultLocale: "ko",
-    locales: ["ko"],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
@@ -56,12 +56,12 @@ const config: Config = {
       items: [
         {
           href: "https://website2.ai",
-          label: "홈페이지",
+          label: "Home",
           position: "right",
         },
         {
           href: "https://website2.ai/builder",
-          label: "시작하기",
+          label: "Get Started",
           position: "right",
         },
       ],
