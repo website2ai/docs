@@ -638,8 +638,22 @@ blockquote p {
     display: none !important;
   }
 
-  /* Auto-expand docSidebar menu in mobile - show sidebar items directly */
-  .navbar-sidebar .menu__list-item--collapsed > .menu__list {
+  /* Hide "Docs" dropdown button and show sidebar items directly */
+  .navbar-sidebar .menu__list-item-collapsible > .menu__link,
+  .navbar-sidebar .menu__list-item-collapsible > .menu__caret {
+    display: none !important;
+  }
+
+  /* Force expand the docSidebar submenu */
+  .navbar-sidebar .menu__list .menu__list {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-left: 0 !important;
+  }
+
+  /* Remove collapsed state styling */
+  .navbar-sidebar .menu__list-item--collapsed .menu__list {
     display: block !important;
     height: auto !important;
   }
