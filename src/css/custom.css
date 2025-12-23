@@ -527,6 +527,7 @@ blockquote p {
 /* Mobile sidebar */
 .navbar-sidebar {
   background: var(--ifm-background-color);
+  height: 100vh;
 }
 
 .navbar-sidebar__brand {
@@ -536,6 +537,8 @@ blockquote p {
 
 .navbar-sidebar__items {
   background: var(--ifm-background-color);
+  height: calc(100vh - 60px);
+  overflow-y: auto;
 }
 
 .navbar-sidebar__items .menu {
