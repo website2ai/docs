@@ -55,6 +55,12 @@ const config: Config = {
       },
       items: [
         {
+          type: "docSidebar",
+          sidebarId: "docs",
+          label: "Docs",
+          position: "left",
+        },
+        {
           href: "https://website2.ai",
           label: "Home",
           position: "right",
