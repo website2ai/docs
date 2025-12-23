@@ -2,6 +2,9 @@
 slug: /
 sidebar_position: 1
 title: Introduction
+description: Website2AI transforms your ideas into fully functional websites using AI. Learn how to create production-ready React websites from natural language descriptions.
+keywords: [Website2AI, AI website builder, no-code website, AI web development, React website generator]
+image: /img/logo.png
 ---
 
 # Welcome to Website2AI

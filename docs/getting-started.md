@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 title: Getting Started
+description: Create your first website with Website2AI in minutes. Learn step-by-step how to use AI to generate professional websites without coding.
+keywords: [getting started, tutorial, quick start, AI website creation, Website2AI guide]
+image: /img/logo.png
 ---
 
 # Getting Started

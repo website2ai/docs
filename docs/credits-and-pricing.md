@@ -1,6 +1,9 @@
 ---
 sidebar_position: 4
 title: Credits & Pricing
+description: Understand Website2AI credit system and pricing plans. Learn about Free, Pro, and Business plans, credit types, and how to optimize your credit usage.
+keywords: [Website2AI pricing, credits, subscription plans, Pro plan, Business plan, credit system]
+image: /img/logo.png
 ---
 
 # Credits & Pricing

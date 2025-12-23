@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "Website2AI",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Website2AI",
+    "description": "The alt text of logo image"
+  },
+  "item.label.Docs": {
+    "message": "문서",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Home": {
+    "message": "홈",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Get Started": {
+    "message": "시작하기",
+    "description": "Navbar item with label Get Started"
+  }
+}

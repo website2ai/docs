@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 title: Features
+description: Explore Website2AI features including AI-powered generation, real-time preview, chat-based editing, version history, instant deployment, and production-ready code.
+keywords: [Website2AI features, AI website generation, real-time preview, version history, custom domains, React TypeScript]
+image: /img/logo.png
 ---
 
 # Features
