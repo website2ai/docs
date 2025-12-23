@@ -64,11 +64,13 @@ const config: Config = {
           href: "https://website2.ai",
           label: "Home",
           position: "right",
+          className: "navbar-external-link",
         },
         {
           href: "https://website2.ai/builder",
           label: "Get Started",
           position: "right",
+          className: "navbar-external-link",
         },
       ],
     },
