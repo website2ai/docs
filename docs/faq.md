@@ -1,6 +1,9 @@
 ---
 sidebar_position: 7
 title: FAQ
+description: Frequently asked questions about Website2AI. Get answers about account, credits, website creation, domains, hosting, technical details, and troubleshooting.
+keywords: [Website2AI FAQ, frequently asked questions, help, support, troubleshooting, common questions]
+image: /img/logo.png
 ---
 
 # Frequently Asked Questions

@@ -1,6 +1,9 @@
 ---
 sidebar_position: 5
 title: Custom Domains
+description: Connect your own domain to Website2AI projects. Step-by-step DNS setup guide for Cloudflare, GoDaddy, Namecheap, and other registrars.
+keywords: [custom domain, DNS setup, SSL certificate, domain configuration, Cloudflare, GoDaddy, Namecheap]
+image: /img/logo.png
 ---
 
 # Custom Domains
