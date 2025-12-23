@@ -588,4 +588,44 @@ blockquote p {
   .navbar {
     padding: 0.5rem 0;
   }
+
+  /* Fix mobile menu items visibility */
+  .navbar-sidebar__item {
+    width: 100%;
+  }
+
+  .navbar-sidebar__items {
+    transform: none !important;
+  }
+
+  .navbar-sidebar__items--show-secondary .navbar-sidebar__item:first-child {
+    display: block;
+  }
+
+  .navbar-sidebar .menu {
+    padding: 1rem;
+  }
+
+  .navbar-sidebar .menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .navbar-sidebar .menu__list-item {
+    width: 100%;
+  }
+
+  .navbar-sidebar .menu__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: var(--ifm-menu-color);
+    border-radius: 8px;
+  }
+
+  .navbar-sidebar .menu__link:hover {
+    background: rgba(129, 140, 248, 0.1);
+  }
 }
