@@ -628,4 +628,19 @@ blockquote p {
   .navbar-sidebar .menu__link:hover {
     background: rgba(129, 140, 248, 0.1);
   }
+
+  /* Hide external link navbar items (Home, Get Started) in mobile sidebar */
+  .navbar-sidebar .navbar-external-link {
+    display: none !important;
+  }
+
+  .navbar-sidebar .navbar__item.navbar__link[href^="http"] {
+    display: none !important;
+  }
+
+  /* Auto-expand docSidebar menu in mobile - show sidebar items directly */
+  .navbar-sidebar .menu__list-item--collapsed > .menu__list {
+    display: block !important;
+    height: auto !important;
+  }
 }
