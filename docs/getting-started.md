@@ -72,7 +72,7 @@ Change the primary color to purple
 Add a testimonials section with 3 customer quotes
 ```
 
-Each change creates a new version. You can always go back to previous versions.
+Version history with restore functionality is coming soon.
 
 ### Step 5: Share Your Website
 

@@ -78,23 +78,19 @@ Use the same color scheme from the header in the pricing section
 Add another testimonial card like the existing ones
 ```
 
-## Version History
+## Version History (Coming Soon)
 
-### Automatic Versioning
+:::info Coming Soon
+Version history and restore functionality is currently in development and will be available soon.
+:::
 
-Every modification creates a new version:
+### Planned Features
 
-- **Version tracking** - Each change is saved as a new version
+- **Version tracking** - Each change will be saved as a new version
 - **Browse history** - See all previous iterations
 - **Restore previous** - Go back to any earlier version
-
-### Version Details
-
-For each version, you can see:
-- The prompt that created it
-- When it was created
-- The complete source code
-- A live preview
+- View the prompt that created each version
+- See timestamps and complete source code for each version
 
 ## Deployment & Hosting
 
@@ -197,16 +193,17 @@ Configure your project:
 |---------|------|-----|
 | Website generation | Yes | Yes |
 | Chat modifications | Yes | Yes |
-| Version history | Yes | Yes |
 | Public preview | Yes | Yes |
 | AI image generation | - | Yes |
 | Custom domains | - | Yes |
+| Version history | Coming soon | Coming soon |
 | Private preview | - | Coming soon |
 
 ## Coming Soon
 
 Features in development:
 
+- Version history & restore
 - Multi-page websites
 - Backend/database integration
 - Team collaboration

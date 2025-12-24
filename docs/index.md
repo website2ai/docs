@@ -33,8 +33,8 @@ See your website being built as the AI generates code. No waiting for builds or 
 ### Chat-Based Editing
 Refine your website through conversation. Ask for changes like "make the header sticky" or "add a contact form" and see updates instantly.
 
-### Version History
-Every change creates a new version. Browse your history and restore any previous version with one click.
+### Version History (Coming Soon)
+Every change will create a new version. You'll be able to browse your history and restore any previous version with one click.
 
 ### Instant Deployment
 Your website is automatically deployed to a global CDN. Share your unique URL immediately, or connect your own domain.

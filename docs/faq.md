@@ -92,11 +92,9 @@ Yes. Use the chat to request changes like:
 - "Add a contact form section"
 - "Make the buttons rounded"
 
-Each change creates a new version.
-
 ### Can I undo changes?
 
-Yes. Every modification creates a new version. You can browse version history and restore any previous version.
+Version history with restore functionality is coming soon. Once available, you'll be able to browse all previous versions and restore any earlier version.
 
 ### Can I view the source code?
 

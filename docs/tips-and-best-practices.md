@@ -100,12 +100,15 @@ Then follow up with additional requests.
 
 ### Use Incremental Changes
 
-Each modification creates a new version. Use this to your advantage:
+Make small, focused changes for better results:
 
 1. Make a change
 2. Preview the result
 3. If you don't like it, request a different approach
-4. Keep the version you prefer
+
+:::tip Coming Soon
+Version history with restore functionality is in development. Soon you'll be able to browse and restore any previous version.
+:::
 
 ## Content Guidelines
 
@@ -237,4 +240,4 @@ The AI automatically attempts to fix build errors. If issues persist:
 5. **Provide real content** - Avoid generic placeholders
 6. **Think mobile** - Specify responsive requirements
 7. **Start simple** - Add complexity incrementally
-8. **Use versions** - Experiment without fear of losing work
+8. **Experiment freely** - Try different approaches to find what works best
