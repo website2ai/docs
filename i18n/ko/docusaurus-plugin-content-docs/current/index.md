@@ -61,8 +61,7 @@ Website2AI는 크레딧 기반 시스템을 사용합니다. 신규 사용자는
 
 **플랜:**
 - **Free** — 가입 보너스 + 일일 크레딧, 기본 기능
-- **Pro** — 더 많은 크레딧, 커스텀 도메인, 고급 기능
-- **Business** — 팀 기능, 통합, 전담 지원
+- **Pro** — 월간 크레딧, AI 이미지 생성, 커스텀 도메인
 
 자세한 내용은 [크레딧 및 가격](/ko/credits-and-pricing)을 참조하거나 [website2.ai/pricing](https://website2.ai/pricing)을 방문하세요.
 

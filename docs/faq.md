@@ -65,10 +65,10 @@ Daily credits are consumed first, then permanent credits.
 
 Pro plan includes:
 - Higher signup bonus
-- More daily credits
 - Monthly credit grants (permanent)
+- AI image generation
 - Custom domains
-- Private previews
+- Private previews *(coming soon)*
 - Priority support
 
 Visit [website2.ai/pricing](https://website2.ai/pricing) for current pricing.
@@ -104,7 +104,7 @@ Yes. Toggle the code panel to see all files, including React components, TypeScr
 
 ### Can I download the code?
 
-Code download is available for Business plan subscribers.
+Code download is coming soon.
 
 ### How many websites can I create?
 
@@ -124,11 +124,11 @@ On Cloudflare's global edge network, ensuring fast load times worldwide.
 
 Default: `https://your-project.website2.ai`
 
-Pro/Business plans can connect custom domains.
+Pro plan can connect custom domains.
 
 ### Can I use my own domain?
 
-Yes, with Pro or Business plan. See [Custom Domains](/custom-domains) for setup.
+Yes, with Pro plan. See [Custom Domains](/custom-domains) for setup.
 
 ### Is HTTPS included?
 
@@ -163,7 +163,7 @@ The AI generates form UI. For form submissions, you'll need to integrate with a 
 
 ### Is there an API?
 
-API access is available for Business plan subscribers. Contact support@website2.ai for details.
+API access is coming soon. Contact support@website2.ai for updates.
 
 ## Privacy & Security
 

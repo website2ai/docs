@@ -155,53 +155,6 @@ Style:
 - Primary color: #10B981 (green)
 ```
 
-## Example Prompts
-
-### Landing Page
-
-```
-Create a landing page for "CloudSync", a file backup service.
-
-Hero: Big headline "Never Lose a File Again", subheadline about
-automatic cloud backup, and two buttons: "Start Free" and "See Pricing"
-
-Features: 3 cards - Automatic Backup, Military-Grade Encryption,
-Cross-Platform Sync
-
-Pricing: Free (5GB), Pro $9/mo (100GB), Team $29/mo (1TB)
-
-Style: Professional, trustworthy, blue color scheme
-```
-
-### Portfolio
-
-```
-Create a portfolio for a UX designer named Alex Chen.
-
-- Hero with name, title "Senior UX Designer", and a brief tagline
-- Work section showing 6 project cards with images and titles
-- About section with photo placeholder, bio, and skills list
-- Contact section with email and social links
-
-Style: Modern, lots of white space, subtle animations
-Colors: Black and white with accent color #6366F1
-```
-
-### Business Website
-
-```
-Create a website for "Green Leaf Landscaping" company.
-
-- Hero with nature background and "Transform Your Outdoor Space"
-- Services: Lawn Care, Garden Design, Tree Trimming, Irrigation
-- Gallery of before/after project photos
-- Testimonials from 3 happy customers
-- Contact form with name, email, phone, message
-- Footer with address, phone, hours, social links
-
-Style: Natural, earthy colors (greens and browns)
-```
-
 ## Credit Usage
 
 Credits are consumed based on the complexity of your request. Simple changes cost less, while full page generation costs more.

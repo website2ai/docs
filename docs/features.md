@@ -121,7 +121,7 @@ Features:
 
 ### Custom Domains
 
-Connect your own domain (Pro/Business plans):
+Connect your own domain (Pro plan):
 
 - Full SSL/HTTPS support
 - Automatic certificate provisioning
@@ -150,16 +150,14 @@ Edit code directly in the browser:
 
 ## AI Image Generation
 
-Generate custom images for your website:
+Generate custom images for your website *(Pro plan only)*:
 
 - **Hero images** - Eye-catching backgrounds
 - **Illustrations** - Custom graphics
 - **Product shots** - Placeholder images
 - **Icons** - Custom iconography
 
-Image generation uses additional credits. Powered by:
-- **GPT Image 1.5** - High-quality, photorealistic images
-- **Nano Banana Pro2** - Fast, cost-effective generation
+Image generation uses additional credits. Powered by **Nano Banana 2** for fast, high-quality generation.
 
 ## Preview Modes
 
@@ -195,64 +193,15 @@ Configure your project:
 
 ## Subscription Features by Plan
 
-| Feature | Free | Pro | Business |
-|---------|------|-----|----------|
-| Website generation | Yes | Yes | Yes |
-| Chat modifications | Yes | Yes | Yes |
-| Version history | Yes | Yes | Yes |
-| Public preview | Yes | Yes | Yes |
-| Private preview | - | Yes | Yes |
-| Custom domains | - | Yes | Yes |
-| Payment integration | - | - | Yes |
-| Auth integration | - | - | Yes |
-| Email integration | - | - | Yes |
-| GitHub export | - | - | Yes |
-
-## Technical Specifications
-
-### Generated Website Stack
-
-| Technology | Version |
-|------------|---------|
-| React | 18+ |
-| TypeScript | 5.x |
-| Tailwind CSS | 3.x |
-| Vite | 5.x |
-
-### Hosting
-
-- **Global CDN** - Fast load times worldwide
-- **Automatic SSL** - HTTPS for all sites
-- **99.9% Uptime** - Reliable hosting infrastructure
-
-### Supported Browsers
-
-Generated websites work on:
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers
-
-## Security
-
-### Infrastructure Security
-
-- **HTTPS everywhere** - All traffic encrypted
-- **Edge network** - Cloudflare's DDoS protection
-- **Secure storage** - Encrypted at rest
-
-### Code Security
-
-- **No server access** - Static sites, no backend vulnerabilities
-- **Content Security Policy** - XSS protection
-- **Secure headers** - Best-practice HTTP headers
-
-### Data Privacy
-
-- Projects private by default
-- No code used for AI training without consent
-- GDPR-compliant data handling
+| Feature | Free | Pro |
+|---------|------|-----|
+| Website generation | Yes | Yes |
+| Chat modifications | Yes | Yes |
+| Version history | Yes | Yes |
+| Public preview | Yes | Yes |
+| AI image generation | - | Yes |
+| Custom domains | - | Yes |
+| Private preview | - | Coming soon |
 
 ## Coming Soon
 
@@ -262,4 +211,3 @@ Features in development:
 - Backend/database integration
 - Team collaboration
 - Template library
-- Component marketplace

@@ -23,7 +23,7 @@ By default, your websites are hosted at `yourproject.website2.ai`. With custom d
 
 ### Requirements
 
-- **Pro or Business subscription** - Custom domains require a paid plan
+- **Pro subscription** - Custom domains require a paid plan
 - **Domain ownership** - You must own or control the domain
 - **DNS access** - Ability to modify DNS records at your registrar
 
@@ -90,80 +90,6 @@ Track your domain's status in the settings:
 | **SSL Pending** | DNS verified, setting up SSL | Wait for automatic SSL |
 | **Active** | Domain is live | Your domain is working |
 | **Failed** | Verification failed | Check DNS and retry |
-
-### Status Colors
-
-- **Yellow** - Pending (needs DNS setup)
-- **Blue** - Verifying or SSL pending (in progress)
-- **Green** - Active (working)
-- **Red** - Failed (needs attention)
-
-## DNS Configuration by Registrar
-
-### Cloudflare
-
-1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com)
-2. Select your domain
-3. Go to **DNS** → **Records**
-4. Click **Add Record**
-5. Configure:
-   - Type: `A`
-   - Name: `@` (or subdomain)
-   - IPv4 address: `137.66.31.203`
-   - Proxy status: **DNS only** (gray cloud)
-6. Click **Save**
-
-**Important:** Set proxy status to "DNS only" (gray cloud), not "Proxied" (orange cloud).
-
-### GoDaddy
-
-1. Log in to [GoDaddy](https://www.godaddy.com)
-2. Go to **My Products** → **Domains**
-3. Click **DNS** next to your domain
-4. Click **Add** under Records
-5. Configure:
-   - Type: `A`
-   - Name: `@`
-   - Value: `137.66.31.203`
-   - TTL: Default
-6. Click **Save**
-
-### Namecheap
-
-1. Log in to [Namecheap](https://www.namecheap.com)
-2. Go to **Domain List**
-3. Click **Manage** on your domain
-4. Select **Advanced DNS**
-5. Click **Add New Record**
-6. Configure:
-   - Type: `A Record`
-   - Host: `@`
-   - Value: `137.66.31.203`
-   - TTL: Automatic
-7. Click **Save All Changes**
-
-### Google Domains / Squarespace
-
-1. Log in to [Squarespace Domains](https://domains.squarespace.com)
-2. Select your domain
-3. Go to **DNS** → **DNS Settings**
-4. Click **Add Record**
-5. Configure:
-   - Type: `A`
-   - Host: `@`
-   - Data: `137.66.31.203`
-6. Click **Add**
-
-### Hover
-
-1. Log in to [Hover](https://www.hover.com)
-2. Click on your domain
-3. Go to **DNS** tab
-4. Click **Add A Record**
-5. Configure:
-   - Hostname: `@`
-   - IP Address: `137.66.31.203`
-6. Click **Add Record**
 
 ## Troubleshooting
 
@@ -245,7 +171,7 @@ To change to a different domain:
 ## Limitations
 
 - **One domain per project** - Each website supports one custom domain
-- **Pro/Business required** - Free plans cannot use custom domains
+- **Pro required** - Free plans cannot use custom domains
 - **Subdomain of website2.ai not allowed** - Cannot use `*.website2.ai`
 
 ## FAQ
@@ -268,7 +194,7 @@ No, custom domains only affect the A record. Your MX records for email remain un
 
 **What happens if I downgrade my plan?**
 
-Custom domains are automatically removed when downgrading from Pro/Business to Free.
+Custom domains are automatically removed when downgrading from Pro to Free.
 
 **Can I use multiple domains?**
 

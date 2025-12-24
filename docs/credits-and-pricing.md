@@ -29,7 +29,8 @@ Website2AI has two types of credits:
 
 | Type | Behavior |
 |------|----------|
-| **Permanent Credits** | Never expire. From signup bonus, purchases, and monthly grants. |
+| **Permanent Credits** | Never expire. From signup bonus and purchases. |
+| **Monthly Credits** | Granted monthly to Pro subscribers. Unused credits carry over for 1 month. |
 | **Daily Credits** | Expire after 24 hours. Refreshed daily at midnight UTC. |
 
 **Usage priority:** Daily credits are consumed first, then permanent credits.
@@ -50,23 +51,11 @@ Get started at no cost:
 For creators who need more power:
 
 - Higher signup bonus
-- More daily credits
 - Monthly credit grants (permanent)
-- Private preview
+- AI image generation
 - Custom domains
+- Private preview *(coming soon)*
 - Priority support
-
-### Business Plan
-
-For teams and advanced use cases:
-
-- All Pro features
-- Payment integration
-- Auth integration
-- Email integration
-- GitHub export
-- Notion integration
-- Dedicated support
 
 *Visit [website2.ai/pricing](https://website2.ai/pricing) for current plans and pricing.*
 
@@ -86,11 +75,6 @@ In the Credits tab, you'll see:
 - **Amount** - positive for credits received, negative for usage
 - **Description** - what the credits were used for
 - **Date** - when the transaction occurred
-
-Transaction types are color-coded:
-- **Green** - Purchased credits (charge)
-- **Purple** - Bonus credits (signup, promotions)
-- **Gray** - Used credits (usage)
 
 ### Credit Refresh Schedule
 
@@ -114,7 +98,6 @@ Transaction types are color-coded:
 ### What Happens When You Upgrade
 
 - **Immediate:** Receive signup bonus credits for the new tier
-- **Daily:** Start receiving higher daily credit allocation
 - **Monthly (Pro):** Receive monthly credits on the 1st
 
 ### Managing Your Subscription
@@ -129,7 +112,7 @@ Access the customer portal to:
 
 ### What Happens When You Downgrade
 
-When downgrading from Pro/Business to Free:
+When downgrading from Pro to Free:
 
 1. **Custom domains are removed** - All connected custom domains will be disconnected
 2. **Credit allocation changes** - You'll receive Free tier daily credits
@@ -154,7 +137,7 @@ Get more from your credits:
 
 **Do purchased credits expire?**
 
-No, purchased credits and monthly subscription credits are permanent and never expire. Only daily credits expire after 24 hours.
+Purchased credits and signup bonus credits are permanent and never expire. Monthly subscription credits carry over for 1 month if unused. Daily credits expire after 24 hours.
 
 **What happens if I run out of credits mid-generation?**
 

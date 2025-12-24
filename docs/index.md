@@ -61,8 +61,7 @@ Website2AI uses a credit-based system. New users receive free credits to get sta
 
 **Plans:**
 - **Free** — Signup bonus + daily credits, basic features
-- **Pro** — More credits, custom domains, advanced features
-- **Business** — Team features, integrations, dedicated support
+- **Pro** — Monthly credits, AI image generation, custom domains
 
 See [Credits & Pricing](/credits-and-pricing) for details, or visit [website2.ai/pricing](https://website2.ai/pricing).
 
