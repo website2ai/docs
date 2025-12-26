@@ -164,7 +164,7 @@ Credits are consumed based on the complexity of your request. Simple changes cos
 - Make focused, single changes
 - Use your daily credits for experimentation
 
-See [Credits & Pricing](/credits-and-pricing) for details.
+See [Credits](/credits) for details.
 
 ## Next Steps
 
