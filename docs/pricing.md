@@ -61,11 +61,8 @@ Access the customer portal to:
 When downgrading from Pro to Free:
 
 1. **Custom domains are removed** - All connected custom domains will be disconnected
-2. **Credit allocation changes** - You'll receive Free tier daily credits
-3. **Features restricted** - Pro features become unavailable
+2. **Features restricted** - Pro features become unavailable
 
 ### Cancellation Policy
 
 - Cancel anytime from the customer portal
-- Access continues until the end of your billing period
-- After the period ends, your account downgrades to Free
