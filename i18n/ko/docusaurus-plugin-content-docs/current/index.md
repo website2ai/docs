@@ -63,7 +63,7 @@ Website2AI는 크레딧 기반 시스템을 사용합니다. 신규 사용자는
 - **Free** — 가입 보너스 + 일일 크레딧, 기본 기능
 - **Pro** — 월간 크레딧, AI 이미지 생성, 커스텀 도메인
 
-자세한 내용은 [크레딧 및 가격](/ko/credits-and-pricing)을 참조하거나 [website2.ai/pricing](https://website2.ai/pricing)을 방문하세요.
+자세한 내용은 [가격](/ko/pricing)을 참조하거나 [website2.ai/pricing](https://website2.ai/pricing)을 방문하세요.
 
 ## 시작하기
 
@@ -83,7 +83,8 @@ Website2AI는 크레딧 기반 시스템을 사용합니다. 신규 사용자는
 |-------|-------------|
 | [시작하기](/ko/getting-started) | 첫 번째 웹사이트 만들기 |
 | [기능](/ko/features) | 모든 기능 살펴보기 |
-| [크레딧 및 가격](/ko/credits-and-pricing) | 크레딧 시스템 이해하기 |
+| [가격](/ko/pricing) | 구독 플랜 |
+| [크레딧](/ko/credits) | 크레딧 시스템 이해하기 |
 | [커스텀 도메인](/ko/custom-domains) | 자신의 도메인 연결하기 |
 | [팁 및 모범 사례](/ko/tips-and-best-practices) | 더 나은 결과 얻기 |
 | [FAQ](/ko/faq) | 자주 묻는 질문 |
