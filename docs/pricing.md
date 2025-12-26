@@ -14,7 +14,7 @@ image: /img/logo.png
 
 Get started at no cost:
 
-- Signup bonus credits (permanent)
+- Signup bonus credits
 - Daily credits (24h expiry)
 - Public preview
 - Basic features
@@ -24,9 +24,9 @@ Get started at no cost:
 For creators who need more power:
 
 - Higher signup bonus
-- Monthly credit grants (permanent)
+- Monthly credit grants (1 month carryover)
 - AI image generation
-- Custom domains
+- Custom domains (100k requests free, $30 per additional 1M)
 - Private preview *(coming soon)*
 - Priority support
 
