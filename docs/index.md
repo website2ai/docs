@@ -9,18 +9,63 @@ image: /img/logo.png
 
 # Welcome to Website2AI
 
-Website2AI transforms your ideas into fully functional websites using AI. Describe what you want in plain English, and watch your website come to life.
+**Just describe your idea. AI builds the website.**
 
-## What is Website2AI?
+Website2AI is an AI-powered platform that instantly generates production-ready React websites from natural language descriptions. No coding knowledge required.
 
-Website2AI is an AI-powered platform that generates production-ready React websites from natural language descriptions. No coding required.
+## Demo Video
 
-**How it works:**
+{/* TODO: Add demo video */}
+<div style={{
+  width: '100%',
+  aspectRatio: '16/9',
+  backgroundColor: '#1a1a2e',
+  borderRadius: '12px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  border: '2px dashed #4a4a6a',
+  marginBottom: '2rem'
+}}>
+  <p style={{color: '#8a8aaa', fontSize: '1.2rem'}}>🎬 Demo video coming soon</p>
+</div>
+
+---
+
+## Why Website2AI?
+
+### Transparent Credit System
+
+:::tip 💰 Pay Only for What You Use
+- **Complexity-Based Pricing** — Credits are charged based on actual task complexity
+- **Site Generation Example** — ~13 credits (without images)
+- **AI Image Generation** — ~12 credits per image
+- **No Overage Charges** — When credits run out, work pauses. No extra charges.
+- **Hosting Included** — Deployment and CDN costs are included
+:::
+
+### Latest AI Models
+
+New AI models are quickly adopted as they become available. Always generate websites with the latest technology.
+
+### Start for Free
+
+- Get **free credits** just by signing up
+- Receive **daily credits** every day
+- No credit card required to start
+
+See our [Pricing page](/pricing) for details.
+
+---
+
+## How It Works
 
 1. **Describe** — Tell the AI what you want to build
 2. **Generate** — Watch your website being created in real-time
 3. **Refine** — Chat to make changes and improvements
 4. **Deploy** — Your site is instantly live and shareable
+
+---
 
 ## Key Features
 
@@ -46,6 +91,11 @@ Generated websites use modern technologies:
 - Vite for fast builds
 - Mobile-responsive by default
 
+### Custom Domains
+Connect your own domain. Available on Pro plan.
+
+---
+
 ## Who Is This For?
 
 - **Entrepreneurs** — Launch MVPs and landing pages quickly
@@ -54,6 +104,8 @@ Generated websites use modern technologies:
 - **Marketers** — Build campaign pages and promotional sites
 - **Developers** — Scaffold projects and generate boilerplate code
 - **Anyone with an idea** — Bring your vision to life, no coding needed
+
+---
 
 ## Pricing
 
@@ -65,7 +117,9 @@ Website2AI uses a credit-based system. New users receive free credits to get sta
 
 See [Pricing](/pricing) for details, or visit [website2.ai/pricing](https://website2.ai/pricing).
 
-## Get Started
+---
+
+## Get Started Now
 
 Ready to create your first website?
 
@@ -76,6 +130,8 @@ Ready to create your first website?
 New users receive **free credits** to get started.
 
 **[Create Your First Website →](/getting-started)**
+
+---
 
 ## Documentation
 
