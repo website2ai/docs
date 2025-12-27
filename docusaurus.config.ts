@@ -37,13 +37,6 @@ const config: Config = {
         content: "Website2AI",
       },
     },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "canonical",
-        href: "https://docs.website2.ai",
-      },
-    },
   ],
 
   i18n: {
@@ -111,10 +104,6 @@ const config: Config = {
         content: "website",
       },
       {
-        name: "og:url",
-        content: "https://docs.website2.ai",
-      },
-      {
         name: "og:image",
         content: "https://docs.website2.ai/img/logo.png",
       },
@@ -130,6 +119,10 @@ const config: Config = {
         name: "twitter:description",
         content:
           "Create websites with AI - No coding required. Comprehensive documentation for Website2AI.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://docs.website2.ai/img/logo.png",
       },
     ],
     colorMode: {
