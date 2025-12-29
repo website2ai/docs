@@ -52,7 +52,7 @@ In the Credits tab, you'll see:
 | Credit Type | When |
 |-------------|------|
 | Daily credits | Every day at 00:00 UTC |
-| Monthly credits (Pro) | 1st of each month |
+| Monthly credits (Pro) | Billing date each month |
 
 **Note:** Unused daily credits expire at midnight UTC.
 
