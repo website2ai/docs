@@ -181,7 +181,7 @@ Yes, by default. You control who can view your projects.
 
 ### Do you use my data to train AI?
 
-No. Your code and prompts are not used to train AI models without explicit consent.
+This depends on the terms of the AI model you use. Please refer to each AI provider's data policy for details.
 
 ## Troubleshooting
 
