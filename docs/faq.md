@@ -112,7 +112,7 @@ Unlimited. Each generation uses credits based on complexity.
 
 ### Can I delete a website?
 
-Yes. Delete projects from your dashboard. Deleted projects cannot be recovered.
+Project deletion is coming soon.
 
 ## Domains & Hosting
 
