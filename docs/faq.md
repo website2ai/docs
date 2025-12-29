@@ -69,6 +69,7 @@ Pro plan includes:
 - Monthly credit grants (1 month carryover)
 - AI image generation
 - Custom domains
+- Remove "Powered by" badge
 - Private previews *(coming soon)*
 - Priority support
 
