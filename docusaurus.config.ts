@@ -70,6 +70,10 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        gtag: {
+          trackingID: "G-ZQEQ58GPZN",
+          anonymizeIP: true,
+        },
         // SEO: Sitemap configuration
         sitemap: {
           lastmod: "date",
