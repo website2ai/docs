@@ -56,16 +56,17 @@ Credits are consumed based on AI usage. Simple changes cost fewer credits; compl
 
 ### Do credits expire?
 
-- **Signup, purchased, and monthly credits** — Never expire
+- **Signup and purchased credits** — Never expire
+- **Monthly credits** — 1 month carryover (unused credits expire the following month)
 - **Daily credits** — Expire at midnight UTC
 
-Daily credits are consumed first, then permanent credits.
+Credits are consumed in order of expiration date.
 
 ### What's included in the Pro plan?
 
 Pro plan includes:
 - Higher signup bonus
-- Monthly credit grants (permanent)
+- Monthly credit grants (1 month carryover)
 - AI image generation
 - Custom domains
 - Private previews *(coming soon)*
