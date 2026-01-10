@@ -1,14 +1,14 @@
 ---
 sidebar_position: 5
 title: 크레딧
-description: Website2AI 크레딧 작동 방식을 이해하세요. 크레딧 유형, 소비, 효과적인 크레딧 관리 방법에 대해 알아보세요.
-keywords: [Website2AI 크레딧, 크레딧 시스템, 토큰 사용량, 크레딧 관리]
+description: Hando 크레딧 작동 방식을 이해하세요. 크레딧 유형, 소비, 효과적인 크레딧 관리 방법에 대해 알아보세요.
+keywords: [Hando 크레딧, 크레딧 시스템, 토큰 사용량, 크레딧 관리]
 image: /img/logo.png
 ---
 
 # 크레딧
 
-크레딧은 Website2AI에서 웹사이트를 생성하고 수정하기 위한 통화입니다.
+크레딧은 Hando에서 웹사이트를 생성하고 수정하기 위한 통화입니다.
 
 ## 크레딧 작동 방식
 
@@ -21,7 +21,7 @@ image: /img/logo.png
 
 ## 크레딧 유형
 
-Website2AI에는 두 가지 유형의 크레딧이 있습니다:
+Hando에는 두 가지 유형의 크레딧이 있습니다:
 
 | 유형 | 동작 |
 |------|----------|

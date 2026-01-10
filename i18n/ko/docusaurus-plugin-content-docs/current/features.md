@@ -1,14 +1,14 @@
 ---
 sidebar_position: 3
 title: 기능
-description: AI 기반 생성, 실시간 미리보기, 채팅 기반 편집, 버전 기록, 즉시 배포, 프로덕션 수준 코드 등 Website2AI 기능을 살펴보세요.
-keywords: [Website2AI 기능, AI 웹사이트 생성, 실시간 미리보기, 버전 기록, 커스텀 도메인, React TypeScript]
+description: AI 기반 생성, 실시간 미리보기, 채팅 기반 편집, 버전 기록, 즉시 배포, 프로덕션 수준 코드 등 Hando 기능을 살펴보세요.
+keywords: [Hando 기능, AI 웹사이트 생성, 실시간 미리보기, 버전 기록, 커스텀 도메인, React TypeScript]
 image: /img/logo.png
 ---
 
 # 기능
 
-Website2AI가 제공하는 모든 것을 살펴보세요.
+Hando가 제공하는 모든 것을 살펴보세요.
 
 ## AI 웹사이트 생성
 
@@ -36,7 +36,7 @@ Website2AI가 제공하는 모든 것을 살펴보세요.
 
 ### 프로덕션 수준 코드
 
-Website2AI는 현대적이고 깔끔한 코드를 생성합니다:
+Hando는 현대적이고 깔끔한 코드를 생성합니다:
 
 - **React 18+** - 컴포넌트 기반 아키텍처
 - **TypeScript** - 타입 안전하고 유지보수 가능한 코드
@@ -46,7 +46,7 @@ Website2AI는 현대적이고 깔끔한 코드를 생성합니다:
 
 ### AI 모델
 
-Website2AI는 웹사이트 생성을 위한 최신의 가장 능력 있는 모델인 **GPT-5.2**를 사용합니다. 복잡한 요구 사항을 이해하고 고품질의 프로덕션 수준 코드를 생성하는 데 탁월합니다.
+Hando는 웹사이트 생성을 위한 최신의 가장 능력 있는 모델인 **GPT-5.2**를 사용합니다. 복잡한 요구 사항을 이해하고 고품질의 프로덕션 수준 코드를 생성하는 데 탁월합니다.
 
 ## 채팅 기반 편집
 
@@ -107,7 +107,7 @@ AI가 전체 프로젝트를 기억합니다. 이전 작업을 기반으로 변�
 웹사이트는 다음 주소에서 사용 가능:
 
 ```
-https://your-project-name.website2.ai
+https://your-project-name.hando.dev
 ```
 
 기능:

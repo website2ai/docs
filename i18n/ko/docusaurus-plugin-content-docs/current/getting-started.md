@@ -1,25 +1,25 @@
 ---
 sidebar_position: 2
 title: 시작하기
-description: 몇 분 안에 Website2AI로 첫 번째 웹사이트를 만드세요. 코딩 없이 AI를 사용하여 전문적인 웹사이트를 생성하는 방법을 단계별로 알아보세요.
-keywords: [시작하기, 튜토리얼, 빠른 시작, AI 웹사이트 생성, Website2AI 가이드]
+description: 몇 분 안에 Hando로 첫 번째 웹사이트를 만드세요. 코딩 없이 AI를 사용하여 전문적인 웹사이트를 생성하는 방법을 단계별로 알아보세요.
+keywords: [시작하기, 튜토리얼, 빠른 시작, AI 웹사이트 생성, Hando 가이드]
 image: /img/logo.png
 ---
 
 # 시작하기
 
-몇 분 안에 Website2AI로 첫 번째 웹사이트를 만드세요.
+몇 분 안에 Hando로 첫 번째 웹사이트를 만드세요.
 
 ## 사전 요구 사항
 
-- Website2AI 계정 — Google로 [가입](https://website2.ai)
+- Hando 계정 — Google로 [가입](https://hando.dev)
 - 계정에 크레딧 (신규 사용자는 무료 크레딧 제공)
 
 ## 빠른 시작
 
 ### 1단계: 빌더 열기
 
-[website2.ai/builder](https://website2.ai/builder)로 이동하여 웹사이트 빌더에 접속하세요.
+[hando.dev/builder](https://hando.dev/builder)로 이동하여 웹사이트 빌더에 접속하세요.
 
 ### 2단계: 웹사이트 설명하기
 
@@ -79,7 +79,7 @@ image: /img/logo.png
 웹사이트는 다음 주소에서 자동으로 배포됩니다:
 
 ```
-https://your-project.website2.ai
+https://your-project.hando.dev
 ```
 
 이 URL을 즉시 공유하거나 [커스텀 도메인을 연결](/ko/custom-domains)하세요 (Pro 플랜).

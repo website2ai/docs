@@ -2,16 +2,16 @@
 slug: /
 sidebar_position: 1
 title: 소개
-description: Website2AI는 AI를 사용하여 아이디어를 완전한 기능을 갖춘 웹사이트로 변환합니다. 자연어 설명으로 프로덕션 수준의 웹사이트를 만드는 방법을 알아보세요.
-keywords: [Website2AI, AI 웹사이트 빌더, 노코드 웹사이트, AI 웹 개발, React 웹사이트 생성기]
+description: Hando는 AI를 사용하여 아이디어를 완전한 기능을 갖춘 웹사이트로 변환합니다. 자연어 설명으로 프로덕션 수준의 웹사이트를 만드는 방법을 알아보세요.
+keywords: [Hando, AI 웹사이트 빌더, 노코드 웹사이트, AI 웹 개발, React 웹사이트 생성기]
 image: /img/logo.png
 ---
 
-# Website2AI에 오신 것을 환영합니다
+# Hando에 오신 것을 환영합니다
 
 **아이디어만 말하세요. 웹사이트는 AI가 만듭니다.**
 
-Website2AI는 자연어로 설명하면 프로덕션 수준의 웹사이트를 즉시 생성하는 AI 플랫폼입니다. 코딩 지식이 전혀 필요 없습니다.
+Hando는 자연어로 설명하면 프로덕션 수준의 웹사이트를 즉시 생성하는 AI 플랫폼입니다. 코딩 지식이 전혀 필요 없습니다.
 
 ## 데모 영상
 
@@ -31,7 +31,7 @@ Website2AI는 자연어로 설명하면 프로덕션 수준의 웹사이트를 �
 
 ---
 
-## 왜 Website2AI인가요?
+## 왜 Hando인가요?
 
 ### 투명한 크레딧 시스템
 
@@ -108,13 +108,13 @@ AI가 코드를 생성하는 동안 웹사이트가 만들어지는 것을 확�
 
 ## 가격
 
-Website2AI는 크레딧 기반 시스템을 사용합니다. 신규 사용자는 시작을 위한 무료 크레딧을 받습니다.
+Hando는 크레딧 기반 시스템을 사용합니다. 신규 사용자는 시작을 위한 무료 크레딧을 받습니다.
 
 **플랜:**
 - **Free** — 가입 보너스 + 일일 크레딧, 기본 기능
 - **Pro** — 월간 크레딧, AI 이미지 생성, 커스텀 도메인
 
-자세한 내용은 [가격](/ko/pricing)을 참조하거나 [website2.ai/pricing](https://website2.ai/pricing)을 방문하세요.
+자세한 내용은 [가격](/ko/pricing)을 참조하거나 [hando.dev/pricing](https://hando.dev/pricing)을 방문하세요.
 
 ---
 
@@ -122,13 +122,13 @@ Website2AI는 크레딧 기반 시스템을 사용합니다. 신규 사용자는
 
 첫 번째 웹사이트를 만들 준비가 되셨나요?
 
-1. Google 계정으로 [가입](https://website2.ai)하세요
-2. [빌더](https://website2.ai/builder)로 이동하세요
+1. Google 계정으로 [가입](https://hando.dev)하세요
+2. [빌더](https://hando.dev/builder)로 이동하세요
 3. 웹사이트를 설명하고 생성되는 것을 지켜보세요
 
 신규 사용자는 시작을 위한 **무료 크레딧**을 받습니다.
 
-**[첫 번째 웹사이트 만들기 →](https://website2.ai/builder)**
+**[첫 번째 웹사이트 만들기 →](https://hando.dev/builder)**
 
 ---
 
@@ -147,5 +147,5 @@ Website2AI는 크레딧 기반 시스템을 사용합니다. 신규 사용자는
 ## 도움이 필요하신가요?
 
 - 일반적인 질문은 [FAQ](/ko/faq)를 참조하세요
-- support@website2.ai로 이메일을 보내세요
+- support@hando.dev로 이메일을 보내세요
 - 더 나은 결과를 위해 [팁 및 모범 사례](/ko/tips-and-best-practices)를 읽어보세요

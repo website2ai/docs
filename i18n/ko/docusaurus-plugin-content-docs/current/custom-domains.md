@@ -1,18 +1,18 @@
 ---
 sidebar_position: 5
 title: 커스텀 도메인
-description: Website2AI 프로젝트에 자신의 도메인을 연결하세요. Cloudflare, GoDaddy, Namecheap 및 기타 레지스트라를 위한 단계별 DNS 설정 가이드.
+description: Hando 프로젝트에 자신의 도메인을 연결하세요. Cloudflare, GoDaddy, Namecheap 및 기타 레지스트라를 위한 단계별 DNS 설정 가이드.
 keywords: [커스텀 도메인, DNS 설정, SSL 인증서, 도메인 구성, Cloudflare, GoDaddy, Namecheap]
 image: /img/logo.png
 ---
 
 # 커스텀 도메인
 
-전문적인 웹 프레젠스를 위해 Website2AI 프로젝트에 자신의 도메인을 연결하세요.
+전문적인 웹 프레젠스를 위해 Hando 프로젝트에 자신의 도메인을 연결하세요.
 
 ## 개요
 
-기본적으로 웹사이트는 `yourproject.website2.ai`에서 호스팅됩니다. 커스텀 도메인을 사용하면 `www.yourdomain.com` 또는 `yourdomain.com`과 같은 자신의 도메인을 사용할 수 있습니다.
+기본적으로 웹사이트는 `yourproject.hando.dev`에서 호스팅됩니다. 커스텀 도메인을 사용하면 `www.yourdomain.com` 또는 `yourdomain.com`과 같은 자신의 도메인을 사용할 수 있습니다.
 
 ### 이점
 
@@ -31,7 +31,7 @@ image: /img/logo.png
 
 ### 1단계: 도메인 설정 열기
 
-1. Website2AI에서 프로젝트 열기
+1. Hando에서 프로젝트 열기
 2. **설정** 아이콘 (톱니바퀴) 클릭
 3. **커스텀 도메인** 섹션 찾기
 
@@ -65,7 +65,7 @@ image: /img/logo.png
 
 ### 4단계: 도메인 확인
 
-1. DNS 레코드 추가 후 Website2AI로 돌아가기
+1. DNS 레코드 추가 후 Hando로 돌아가기
 2. **도메인 확인** 클릭
 3. DNS 확인 완료 대기
 
@@ -157,7 +157,7 @@ Cloudflare를 사용하고 문제가 있다면:
 2. **삭제** 또는 휴지통 아이콘 클릭
 3. 제거 확인
 
-웹사이트는 `yourproject.website2.ai`로 돌아갑니다.
+웹사이트는 `yourproject.hando.dev`로 돌아갑니다.
 
 ### 도메인 변경
 
@@ -172,7 +172,7 @@ Cloudflare를 사용하고 문제가 있다면:
 
 - **프로젝트당 하나의 도메인** - 각 웹사이트는 하나의 커스텀 도메인 지원
 - **Pro 필요** - Free 플랜은 커스텀 도메인 사용 불가
-- **website2.ai 서브도메인 불가** - `*.website2.ai` 사용 불가
+- **hando.dev 서브도메인 불가** - `*.hando.dev` 사용 불가
 
 ## FAQ
 

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 7
 title: FAQ
-description: Website2AI에 대해 자주 묻는 질문. 계정, 크레딧, 웹사이트 생성, 도메인, 호스팅, 기술 세부 사항, 문제 해결에 대한 답변을 얻으세요.
-keywords: [Website2AI FAQ, 자주 묻는 질문, 도움말, 지원, 문제 해결, 일반적인 질문]
+description: Hando에 대해 자주 묻는 질문. 계정, 크레딧, 웹사이트 생성, 도메인, 호스팅, 기술 세부 사항, 문제 해결에 대한 답변을 얻으세요.
+keywords: [Hando FAQ, 자주 묻는 질문, 도움말, 지원, 문제 해결, 일반적인 질문]
 image: /img/logo.png
 ---
 
@@ -10,13 +10,13 @@ image: /img/logo.png
 
 ## 일반
 
-### Website2AI란 무엇인가요?
+### Hando란 무엇인가요?
 
-Website2AI는 자연어 설명으로 웹사이트를 만드는 AI 기반 플랫폼입니다. 원하는 것을 설명하면 AI가 React, TypeScript, Tailwind CSS를 사용하여 완전한 프로덕션 수준의 웹사이트를 생성합니다.
+Hando는 자연어 설명으로 웹사이트를 만드는 AI 기반 플랫폼입니다. 원하는 것을 설명하면 AI가 React, TypeScript, Tailwind CSS를 사용하여 완전한 프로덕션 수준의 웹사이트를 생성합니다.
 
 ### 코딩을 알아야 하나요?
 
-아니요. Website2AI는 모든 사람을 위해 설계되었습니다. 일반 언어로 웹사이트를 설명하면 AI가 모든 기술적인 작업을 처리합니다. 코딩을 안다면 생성된 소스 코드를 보고 편집할 수 있습니다.
+아니요. Hando는 모든 사람을 위해 설계되었습니다. 일반 언어로 웹사이트를 설명하면 AI가 모든 기술적인 작업을 처리합니다. 코딩을 안다면 생성된 소스 코드를 보고 편집할 수 있습니다.
 
 ### 어떤 종류의 웹사이트를 만들 수 있나요?
 
@@ -44,7 +44,7 @@ Website2AI는 자연어 설명으로 웹사이트를 만드는 AI 기반 플랫�
 
 ### 어떻게 가입하나요?
 
-[website2.ai](https://website2.ai)를 방문하여 Google 계정으로 로그인하세요.
+[hando.dev](https://hando.dev)를 방문하여 Google 계정으로 로그인하세요.
 
 ### 무료 플랜이 있나요?
 
@@ -73,7 +73,7 @@ Pro 플랜 포함:
 - 비공개 미리보기 *(곧 제공 예정)*
 - 우선 지원
 
-현재 가격은 [website2.ai/pricing](https://website2.ai/pricing)을 방문하세요.
+현재 가격은 [hando.dev/pricing](https://hando.dev/pricing)을 방문하세요.
 
 ### Pro로 업그레이드하려면 어떻게 하나요?
 
@@ -122,7 +122,7 @@ Cloudflare의 글로벌 엣지 네트워크에서 전 세계 빠른 로드 시�
 
 ### 웹사이트 URL은 무엇인가요?
 
-기본값: `https://your-project.website2.ai`
+기본값: `https://your-project.hando.dev`
 
 Pro 플랜은 커스텀 도메인을 연결할 수 있습니다.
 
@@ -155,7 +155,7 @@ Pro 플랜은 커스텀 도메인을 연결할 수 있습니다.
 
 ### 데이터베이스를 추가할 수 있나요?
 
-현재 Website2AI는 프론트엔드 코드를 생성합니다. 데이터베이스 통합은 향후 릴리스에서 계획되어 있습니다.
+현재 Hando는 프론트엔드 코드를 생성합니다. 데이터베이스 통합은 향후 릴리스에서 계획되어 있습니다.
 
 ### 데이터를 제출하는 양식을 추가할 수 있나요?
 
@@ -163,7 +163,7 @@ AI가 양식 UI를 생성합니다. 양식 제출의 경우 Formspree와 같은 
 
 ### API가 있나요?
 
-API 접근은 곧 제공될 예정입니다. 업데이트를 받으시려면 support@website2.ai로 문의하세요.
+API 접근은 곧 제공될 예정입니다. 업데이트를 받으시려면 support@hando.dev로 문의하세요.
 
 ## 개인정보 및 보안
 
@@ -218,16 +218,16 @@ AI가 자동으로 빌드 오류 수정을 시도합니다. 문제가 지속되�
 ### 도움을 받으려면 어떻게 하나요?
 
 - 이 문서 탐색
-- support@website2.ai로 이메일
+- support@hando.dev로 이메일
 - [팁 및 모범 사례](/ko/tips-and-best-practices) 확인
 
 ### 버그를 신고하려면 어떻게 하나요?
 
-support@website2.ai로 이메일에 다음을 포함해서 보내주세요:
+support@hando.dev로 이메일에 다음을 포함해서 보내주세요:
 - 문제 설명
 - 재현 단계
 - 도움이 되는 스크린샷
 
 ### 기능을 요청할 수 있나요?
 
-예! 기능 요청을 feedback@website2.ai로 보내주세요. 모든 제안을 읽습니다.
+예! 기능 요청을 feedback@hando.dev로 보내주세요. 모든 제안을 읽습니다.

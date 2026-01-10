@@ -1,8 +1,8 @@
 ---
 sidebar_position: 4
 title: 가격
-description: Website2AI 가격 플랜. Free와 Pro 플랜을 비교하고 필요에 맞는 플랜을 선택하세요.
-keywords: [Website2AI 가격, 구독 플랜, Pro 플랜, Free 플랜]
+description: Hando 가격 플랜. Free와 Pro 플랜을 비교하고 필요에 맞는 플랜을 선택하세요.
+keywords: [Hando 가격, 구독 플랜, Pro 플랜, Free 플랜]
 image: /img/logo.png
 ---
 
@@ -30,7 +30,7 @@ image: /img/logo.png
 - 비공개 미리보기 *(곧 제공 예정)*
 - 우선 지원
 
-*현재 플랜 및 가격은 [website2.ai/pricing](https://website2.ai/pricing)을 방문하세요.*
+*현재 플랜 및 가격은 [hando.dev/pricing](https://hando.dev/pricing)을 방문하세요.*
 
 ## 플랜 업그레이드
 

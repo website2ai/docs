@@ -1,14 +1,14 @@
 ---
 sidebar_position: 6
 title: 팁 및 모범 사례
-description: 효과적인 프롬프트 작성, 반복적 개선, 전문적인 웹사이트 제작을 위한 모범 사례 팁으로 Website2AI를 최대한 활용하세요.
-keywords: [Website2AI 팁, 모범 사례, 프롬프트 작성, AI 프롬프트, 웹사이트 최적화, 효과적인 프롬프트]
+description: 효과적인 프롬프트 작성, 반복적 개선, 전문적인 웹사이트 제작을 위한 모범 사례 팁으로 Hando를 최대한 활용하세요.
+keywords: [Hando 팁, 모범 사례, 프롬프트 작성, AI 프롬프트, 웹사이트 최적화, 효과적인 프롬프트]
 image: /img/logo.png
 ---
 
 # 팁 및 모범 사례
 
-이 팁과 모범 사례로 Website2AI를 최대한 활용하세요.
+이 팁과 모범 사례로 Hando를 최대한 활용하세요.
 
 ## 효과적인 프롬프트 작성
 
