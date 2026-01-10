@@ -1,14 +1,14 @@
 ---
 sidebar_position: 3
 title: Features
-description: Explore Website2AI features including AI-powered generation, real-time preview, chat-based editing, version history, instant deployment, and production-ready code.
-keywords: [Website2AI features, AI website generation, real-time preview, version history, custom domains, React TypeScript]
+description: Explore Hando features including AI-powered generation, real-time preview, chat-based editing, version history, instant deployment, and production-ready code.
+keywords: [Hando features, AI website generation, real-time preview, version history, custom domains, React TypeScript]
 image: /img/logo.png
 ---
 
 # Features
 
-Explore everything Website2AI has to offer.
+Explore everything Hando has to offer.
 
 ## AI Website Generation
 
@@ -36,7 +36,7 @@ Watch your website come to life:
 
 ### Production-Ready Code
 
-Website2AI generates modern, clean code:
+Hando generates modern, clean code:
 
 - **React 18+** - Component-based architecture
 - **TypeScript** - Type-safe, maintainable code
@@ -46,7 +46,7 @@ Website2AI generates modern, clean code:
 
 ### AI Model
 
-Website2AI uses **GPT-5.2**, the latest and most capable model for website generation. It excels at understanding complex requirements and generating high-quality, production-ready code.
+Hando uses **GPT-5.2**, the latest and most capable model for website generation. It excels at understanding complex requirements and generating high-quality, production-ready code.
 
 ## Chat-Based Editing
 
@@ -107,7 +107,7 @@ Every website is automatically:
 Your website is available at:
 
 ```
-https://your-project-name.website2.ai
+https://your-project-name.hando.dev
 ```
 
 Features:

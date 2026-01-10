@@ -1,18 +1,18 @@
 ---
 sidebar_position: 5
 title: Custom Domains
-description: Connect your own domain to Website2AI projects. Step-by-step DNS setup guide for Cloudflare, GoDaddy, Namecheap, and other registrars.
+description: Connect your own domain to Hando projects. Step-by-step DNS setup guide for Cloudflare, GoDaddy, Namecheap, and other registrars.
 keywords: [custom domain, DNS setup, SSL certificate, domain configuration, Cloudflare, GoDaddy, Namecheap]
 image: /img/logo.png
 ---
 
 # Custom Domains
 
-Connect your own domain to your Website2AI projects for a professional web presence.
+Connect your own domain to your Hando projects for a professional web presence.
 
 ## Overview
 
-By default, your websites are hosted at `yourproject.website2.ai`. With custom domains, you can use your own domain like `www.yourdomain.com` or `yourdomain.com`.
+By default, your websites are hosted at `yourproject.hando.dev`. With custom domains, you can use your own domain like `www.yourdomain.com` or `yourdomain.com`.
 
 ### Benefits
 
@@ -31,7 +31,7 @@ By default, your websites are hosted at `yourproject.website2.ai`. With custom d
 
 ### Step 1: Open Domain Settings
 
-1. Open your project in Website2AI
+1. Open your project in Hando
 2. Click the **Settings** icon (gear)
 3. Find the **Custom Domain** section
 
@@ -65,7 +65,7 @@ Add an **A record** at your domain registrar pointing to our server:
 
 ### Step 4: Verify Your Domain
 
-1. After adding the DNS record, return to Website2AI
+1. After adding the DNS record, return to Hando
 2. Click **Verify Domain**
 3. Wait for DNS verification to complete
 
@@ -157,7 +157,7 @@ If using Cloudflare and having issues:
 2. Click **Delete** or the trash icon
 3. Confirm removal
 
-Your website will return to `yourproject.website2.ai`.
+Your website will return to `yourproject.hando.dev`.
 
 ### Changing Domains
 
@@ -172,7 +172,7 @@ To change to a different domain:
 
 - **One domain per project** - Each website supports one custom domain
 - **Pro required** - Free plans cannot use custom domains
-- **Subdomain of website2.ai not allowed** - Cannot use `*.website2.ai`
+- **Subdomain of hando.dev not allowed** - Cannot use `*.hando.dev`
 
 ## FAQ
 

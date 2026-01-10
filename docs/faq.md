@@ -1,8 +1,8 @@
 ---
 sidebar_position: 7
 title: FAQ
-description: Frequently asked questions about Website2AI. Get answers about account, credits, website creation, domains, hosting, technical details, and troubleshooting.
-keywords: [Website2AI FAQ, frequently asked questions, help, support, troubleshooting, common questions]
+description: Frequently asked questions about Hando. Get answers about account, credits, website creation, domains, hosting, technical details, and troubleshooting.
+keywords: [Hando FAQ, frequently asked questions, help, support, troubleshooting, common questions]
 image: /img/logo.png
 ---
 
@@ -10,13 +10,13 @@ image: /img/logo.png
 
 ## General
 
-### What is Website2AI?
+### What is Hando?
 
-Website2AI is an AI-powered platform that creates websites from natural language descriptions. You describe what you want, and our AI generates a complete, production-ready website using React, TypeScript, and Tailwind CSS.
+Hando is an AI-powered platform that creates websites from natural language descriptions. You describe what you want, and our AI generates a complete, production-ready website using React, TypeScript, and Tailwind CSS.
 
 ### Do I need to know how to code?
 
-No. Website2AI is designed for everyone. Describe your website in plain English, and the AI handles all the technical work. If you do know how to code, you can view and edit the generated source code.
+No. Hando is designed for everyone. Describe your website in plain English, and the AI handles all the technical work. If you do know how to code, you can view and edit the generated source code.
 
 ### What kind of websites can I create?
 
@@ -44,7 +44,7 @@ Websites are hosted on Cloudflare's global edge network.
 
 ### How do I sign up?
 
-Visit [website2.ai](https://website2.ai) and sign in with your Google account.
+Visit [hando.dev](https://hando.dev) and sign in with your Google account.
 
 ### Is there a free plan?
 
@@ -73,7 +73,7 @@ Pro plan includes:
 - Private previews *(coming soon)*
 - Priority support
 
-Visit [website2.ai/pricing](https://website2.ai/pricing) for current pricing.
+Visit [hando.dev/pricing](https://hando.dev/pricing) for current pricing.
 
 ### How do I upgrade to Pro?
 
@@ -122,7 +122,7 @@ On Cloudflare's global edge network, ensuring fast load times worldwide.
 
 ### What URL will my website have?
 
-Default: `https://your-project.website2.ai`
+Default: `https://your-project.hando.dev`
 
 Pro plan can connect custom domains.
 
@@ -155,7 +155,7 @@ Generated websites work on:
 
 ### Can I add a database?
 
-Currently, Website2AI generates frontend code. Database integration is planned for future releases.
+Currently, Hando generates frontend code. Database integration is planned for future releases.
 
 ### Can I add forms that submit data?
 
@@ -163,7 +163,7 @@ The AI generates form UI. For form submissions, you'll need to integrate with a 
 
 ### Is there an API?
 
-API access is coming soon. Contact support@website2.ai for updates.
+API access is coming soon. Contact support@hando.dev for updates.
 
 ## Privacy & Security
 
@@ -218,16 +218,16 @@ Try:
 ### How do I get help?
 
 - Browse this documentation
-- Email support@website2.ai
+- Email support@hando.dev
 - Check [Tips & Best Practices](/tips-and-best-practices)
 
 ### How do I report a bug?
 
-Email support@website2.ai with:
+Email support@hando.dev with:
 - Description of the issue
 - Steps to reproduce
 - Screenshots if helpful
 
 ### Can I request a feature?
 
-Yes! Send feature requests to feedback@website2.ai. We read every suggestion.
+Yes! Send feature requests to feedback@hando.dev. We read every suggestion.

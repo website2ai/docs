@@ -1,8 +1,8 @@
 ---
 sidebar_position: 4
 title: Pricing
-description: Website2AI pricing plans. Compare Free and Pro plans to find the right fit for your needs.
-keywords: [Website2AI pricing, subscription plans, Pro plan, Free plan]
+description: Hando pricing plans. Compare Free and Pro plans to find the right fit for your needs.
+keywords: [Hando pricing, subscription plans, Pro plan, Free plan]
 image: /img/logo.png
 ---
 
@@ -30,7 +30,7 @@ For creators who need more power:
 - Private preview *(coming soon)*
 - Priority support
 
-*Visit [website2.ai/pricing](https://website2.ai/pricing) for current plans and pricing.*
+*Visit [hando.dev/pricing](https://hando.dev/pricing) for current plans and pricing.*
 
 ## Upgrading Your Plan
 

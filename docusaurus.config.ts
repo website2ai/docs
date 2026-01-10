@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Website2AI Docs",
+  title: "Hando Docs",
   tagline: "Turn your ideas into websites with AI",
   favicon: "img/favicon.ico",
 
@@ -11,10 +11,10 @@ const config: Config = {
     v4: true,
   },
 
-  url: "https://docs.website2.ai",
+  url: "https://docs.hando.dev",
   baseUrl: "/",
 
-  organizationName: "website2ai",
+  organizationName: "hando",
   projectName: "docs",
   trailingSlash: false,
 
@@ -27,14 +27,14 @@ const config: Config = {
       attributes: {
         name: "keywords",
         content:
-          "AI website builder, website generator, AI web development, no-code website, React website builder, Website2AI",
+          "AI website builder, website generator, AI web development, no-code website, React website builder, Hando",
       },
     },
     {
       tagName: "meta",
       attributes: {
         name: "author",
-        content: "Website2AI",
+        content: "Hando",
       },
     },
   ],
@@ -92,16 +92,16 @@ const config: Config = {
       {
         name: "description",
         content:
-          "Website2AI documentation - Learn how to create websites with AI. Comprehensive guides for AI-powered website generation, features, pricing, and best practices.",
+          "Hando documentation - Learn how to create websites with AI. Comprehensive guides for AI-powered website generation, features, pricing, and best practices.",
       },
       {
         name: "og:title",
-        content: "Website2AI Documentation",
+        content: "Hando Documentation",
       },
       {
         name: "og:description",
         content:
-          "Create websites with AI - No coding required. Learn how to use Website2AI to generate production-ready React websites from natural language.",
+          "Create websites with AI - No coding required. Learn how to use Hando to generate production-ready React websites from natural language.",
       },
       {
         name: "og:type",
@@ -109,7 +109,7 @@ const config: Config = {
       },
       {
         name: "og:image",
-        content: "https://docs.website2.ai/img/logo.png",
+        content: "https://docs.hando.dev/img/logo.png",
       },
       {
         name: "twitter:card",
@@ -117,16 +117,16 @@ const config: Config = {
       },
       {
         name: "twitter:title",
-        content: "Website2AI Documentation",
+        content: "Hando Documentation",
       },
       {
         name: "twitter:description",
         content:
-          "Create websites with AI - No coding required. Comprehensive documentation for Website2AI.",
+          "Create websites with AI - No coding required. Comprehensive documentation for Hando.",
       },
       {
         name: "twitter:image",
-        content: "https://docs.website2.ai/img/logo.png",
+        content: "https://docs.hando.dev/img/logo.png",
       },
     ],
     colorMode: {
@@ -135,9 +135,9 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "Website2AI",
+      title: "Hando",
       logo: {
-        alt: "Website2AI",
+        alt: "Hando",
         src: "img/logo.png",
       },
       items: [
@@ -152,13 +152,13 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://website2.ai",
+          href: "https://hando.dev",
           label: "Home",
           position: "right",
           className: "navbar-external-link",
         },
         {
-          href: "https://website2.ai/builder",
+          href: "https://hando.dev/builder",
           label: "Get Started",
           position: "right",
           className: "navbar-external-link",
@@ -168,7 +168,7 @@ const config: Config = {
     footer: {
       style: "dark",
       links: [],
-      copyright: `© ${new Date().getFullYear()} Website2AI`,
+      copyright: `© ${new Date().getFullYear()} Hando`,
     },
     prism: {
       theme: prismThemes.github,

@@ -1,14 +1,14 @@
 ---
 sidebar_position: 6
 title: Tips & Best Practices
-description: Get the most out of Website2AI with tips for writing effective prompts, iterative refinement, and best practices for creating professional websites.
-keywords: [Website2AI tips, best practices, prompt writing, AI prompts, website optimization, effective prompts]
+description: Get the most out of Hando with tips for writing effective prompts, iterative refinement, and best practices for creating professional websites.
+keywords: [Hando tips, best practices, prompt writing, AI prompts, website optimization, effective prompts]
 image: /img/logo.png
 ---
 
 # Tips & Best Practices
 
-Get the most out of Website2AI with these tips and best practices.
+Get the most out of Hando with these tips and best practices.
 
 ## Writing Effective Prompts
 

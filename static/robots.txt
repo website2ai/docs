@@ -1,11 +1,11 @@
-# Website2AI Documentation - robots.txt
-# https://docs.website2.ai
+# Hando Documentation - robots.txt
+# https://docs.hando.dev
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://docs.website2.ai/sitemap.xml
+Sitemap: https://docs.hando.dev/sitemap.xml
 
 # Disallow search and tag pages to avoid duplicate content
 Disallow: /search

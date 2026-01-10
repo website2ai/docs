@@ -1,14 +1,14 @@
 ---
 sidebar_position: 5
 title: Credits
-description: Understand how Website2AI credits work. Learn about credit types, consumption, and how to manage your credits effectively.
-keywords: [Website2AI credits, credit system, token usage, credit management]
+description: Understand how Hando credits work. Learn about credit types, consumption, and how to manage your credits effectively.
+keywords: [Hando credits, credit system, token usage, credit management]
 image: /img/logo.png
 ---
 
 # Credits
 
-Credits are the currency for generating and modifying websites on Website2AI.
+Credits are the currency for generating and modifying websites on Hando.
 
 ## How Credits Work
 
@@ -21,7 +21,7 @@ Credits are consumed based on AI usage. The cost varies depending on:
 
 ## Credit Types
 
-Website2AI has two types of credits:
+Hando has two types of credits:
 
 | Type | Behavior |
 |------|----------|

@@ -1,25 +1,25 @@
 ---
 sidebar_position: 2
 title: Getting Started
-description: Create your first website with Website2AI in minutes. Learn step-by-step how to use AI to generate professional websites without coding.
-keywords: [getting started, tutorial, quick start, AI website creation, Website2AI guide]
+description: Create your first website with Hando in minutes. Learn step-by-step how to use AI to generate professional websites without coding.
+keywords: [getting started, tutorial, quick start, AI website creation, Hando guide]
 image: /img/logo.png
 ---
 
 # Getting Started
 
-Create your first website with Website2AI in minutes.
+Create your first website with Hando in minutes.
 
 ## Prerequisites
 
-- A Website2AI account — [Sign up](https://website2.ai) with Google
+- A Hando account — [Sign up](https://hando.dev) with Google
 - Credits in your account (new users receive free credits)
 
 ## Quick Start
 
 ### Step 1: Open the Builder
 
-Go to [website2.ai/builder](https://website2.ai/builder) to access the website builder.
+Go to [hando.dev/builder](https://hando.dev/builder) to access the website builder.
 
 ### Step 2: Describe Your Website
 
@@ -79,7 +79,7 @@ Version history with restore functionality is coming soon.
 Your website is automatically deployed at:
 
 ```
-https://your-project.website2.ai
+https://your-project.hando.dev
 ```
 
 Share this URL immediately, or [connect a custom domain](/custom-domains) (Pro plan).

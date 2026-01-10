@@ -2,16 +2,16 @@
 slug: /
 sidebar_position: 1
 title: Introduction
-description: Website2AI transforms your ideas into fully functional websites using AI. Learn how to create production-ready React websites from natural language descriptions.
-keywords: [Website2AI, AI website builder, no-code website, AI web development, React website generator]
+description: Hando transforms your ideas into fully functional websites using AI. Learn how to create production-ready React websites from natural language descriptions.
+keywords: [Hando, AI website builder, no-code website, AI web development, React website generator]
 image: /img/logo.png
 ---
 
-# Welcome to Website2AI
+# Welcome to Hando
 
 **Just describe your idea. AI builds the website.**
 
-Website2AI is an AI-powered platform that instantly generates production-ready React websites from natural language descriptions. No coding knowledge required.
+Hando is an AI-powered platform that instantly generates production-ready React websites from natural language descriptions. No coding knowledge required.
 
 ## Demo Video
 
@@ -32,7 +32,7 @@ Website2AI is an AI-powered platform that instantly generates production-ready R
 
 ---
 
-## Why Website2AI?
+## Why Hando?
 
 ### Transparent Credit System
 
@@ -109,13 +109,13 @@ Connect your own domain. Available on Pro plan.
 
 ## Pricing
 
-Website2AI uses a credit-based system. New users receive free credits to get started.
+Hando uses a credit-based system. New users receive free credits to get started.
 
 **Plans:**
 - **Free** — Signup bonus + daily credits, basic features
 - **Pro** — Monthly credits, AI image generation, custom domains
 
-See [Pricing](/pricing) for details, or visit [website2.ai/pricing](https://website2.ai/pricing).
+See [Pricing](/pricing) for details, or visit [hando.dev/pricing](https://hando.dev/pricing).
 
 ---
 
@@ -123,8 +123,8 @@ See [Pricing](/pricing) for details, or visit [website2.ai/pricing](https://webs
 
 Ready to create your first website?
 
-1. [Sign up](https://website2.ai) with your Google account
-2. Go to the [Builder](https://website2.ai/builder)
+1. [Sign up](https://hando.dev) with your Google account
+2. Go to the [Builder](https://hando.dev/builder)
 3. Describe your website and watch it come to life
 
 New users receive **free credits** to get started.
@@ -148,5 +148,5 @@ New users receive **free credits** to get started.
 ## Need Help?
 
 - Browse the [FAQ](/faq) for common questions
-- Email us at support@website2.ai
+- Email us at support@hando.dev
 - Read our [Tips & Best Practices](/tips-and-best-practices) for better results
