@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Hando Docs",
+  title: "hando Docs",
   tagline: "Turn your ideas into websites with AI",
   favicon: "img/favicon.ico",
 
@@ -27,14 +27,14 @@ const config: Config = {
       attributes: {
         name: "keywords",
         content:
-          "AI website builder, website generator, AI web development, no-code website, React website builder, Hando",
+          "AI website builder, website generator, AI web development, no-code website, React website builder, hando",
       },
     },
     {
       tagName: "meta",
       attributes: {
         name: "author",
-        content: "Hando",
+        content: "hando",
       },
     },
   ],
@@ -92,16 +92,16 @@ const config: Config = {
       {
         name: "description",
         content:
-          "Hando documentation - Learn how to create websites with AI. Comprehensive guides for AI-powered website generation, features, pricing, and best practices.",
+          "hando documentation - Learn how to create websites with AI. Comprehensive guides for AI-powered website generation, features, pricing, and best practices.",
       },
       {
         name: "og:title",
-        content: "Hando Documentation",
+        content: "hando Documentation",
       },
       {
         name: "og:description",
         content:
-          "Create websites with AI - No coding required. Learn how to use Hando to generate production-ready React websites from natural language.",
+          "Create websites with AI - No coding required. Learn how to use hando to generate production-ready React websites from natural language.",
       },
       {
         name: "og:type",
@@ -117,12 +117,12 @@ const config: Config = {
       },
       {
         name: "twitter:title",
-        content: "Hando Documentation",
+        content: "hando Documentation",
       },
       {
         name: "twitter:description",
         content:
-          "Create websites with AI - No coding required. Comprehensive documentation for Hando.",
+          "Create websites with AI - No coding required. Comprehensive documentation for hando.",
       },
       {
         name: "twitter:image",
@@ -135,9 +135,9 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "Hando",
+      title: "hando",
       logo: {
-        alt: "Hando",
+        alt: "hando",
         src: "img/logo.png",
       },
       items: [
@@ -168,7 +168,7 @@ const config: Config = {
     footer: {
       style: "dark",
       links: [],
-      copyright: `© ${new Date().getFullYear()} Hando`,
+      copyright: `© ${new Date().getFullYear()} hando`,
     },
     prism: {
       theme: prismThemes.github,
